@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nihongo Juku – JLPT N5 to N2</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f3ea;--card:#fffdf8;--ink:#1c1a17;--mute:#7a7266;--gold:#b8892b;--red:#b3262e;--line:#e6dfd0;--ok:#2f7d4f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e11;--card:#17171c;--ink:#f2ede2;--mute:#9a9486;--gold:#d9ae55;--red:#e5484d;--line:#2a2a31;--ok:#4cc38a}}
+:root[data-theme="dark"]{--bg:#0e0e11;--card:#17171c;--ink:#f2ede2;--mute:#9a9486;--gold:#d9ae55;--red:#e5484d;--line:#2a2a31;--ok:#4cc38a}
+.hero{position:relative;border-radius:22px;overflow:hidden;margin-bottom:18px;border:1px solid rgba(255,255,255,.08);box-shadow:0 24px 60px -28px #000}
+.hero svg{display:block;width:100%;height:auto}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.3));pointer-events:none}
+.pet{transform-box:fill-box;transform-origin:center;animation:fall var(--t,10s) linear infinite;animation-delay:var(--d,0s)}
+@keyframes fall{0%{transform:translate(0,-20px) rotate(0)}50%{transform:translate(18px,110px) rotate(180deg)}100%{transform:translate(-6px,240px) rotate(360deg)}}
+.sun{transform-box:fill-box;transform-origin:center;animation:glow 5s ease-in-out infinite}@keyframes glow{50%{opacity:.75;transform:scale(1.04)}}
+.tw{animation:tw 3s ease-in-out infinite;animation-delay:var(--d,0s)}@keyframes tw{50%{opacity:.15}}
+.cl{animation:drift 26s ease-in-out infinite alternate}@keyframes drift{to{transform:translateX(60px)}}
+.sh{animation:shine 4s linear infinite}@keyframes shine{to{transform:translateX(-140px)}}
+@media (prefers-reduced-motion:reduce){.pet,.sun,.tw,.cl,.sh{animation:none}}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.5);opacity:0}70%{transform:scale(1.08)}100%{transform:none;opacity:1}}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
+@keyframes sheen{from{background-position:-200% 0}to{background-position:200% 0}}
+#main>*{animation:up .55s cubic-bezier(.2,.8,.2,1) backwards}
+#main>*:nth-child(2){animation-delay:.05s}#main>*:nth-child(3){animation-delay:.1s}#main>*:nth-child(4){animation-delay:.15s}
+.card{transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-2px);box-shadow:0 22px 44px -24px #000}
+.btn{transition:transform .15s,background .2s,box-shadow .2s,color .2s}.btn:hover{transform:translateY(-1px)}.btn:active{transform:scale(.95)}
+.btn.p{background:linear-gradient(90deg,var(--gold),#c9962f,var(--gold));background-size:200% 100%}.btn.p:hover{animation:sheen 1.2s linear infinite;box-shadow:0 10px 24px -10px var(--gold)}
+.lv button{transition:transform .25s,box-shadow .25s,background .25s}.lv button:hover{transform:translateY(-3px)}.lv button:active{transform:scale(.96)}
+.lv button.on{animation:pop .45s}
+.tabs button{transition:color .2s,border-color .25s}
+.opt{transition:transform .2s,border-color .2s,background .2s}.opt:hover{transform:translateX(5px);border-color:var(--gold)}
+.opt.no{animation:shake .45s}
+.opt.ok{animation:pop .4s}
+.bar i{transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.sc{animation:pop .7s cubic-bezier(.2,.8,.2,1)}
+.owl{display:inline-block;animation:bob 3s ease-in-out infinite}
+.lv,.tabs{animation:up .5s ease backwards}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pop{0%{transform:scale(.92);opacity:.6}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+@keyframes flipIn{from{opacity:0;transform:perspective(900px) rotateX(-25deg) translateY(10px)}to{opacity:1;transform:none}}
+@keyframes grow{from{width:0}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 0 rgba(184,137,43,.35)}50%{box-shadow:0 0 0 10px rgba(184,137,43,0)}}
+@keyframes shimmer{from{background-position:-200% 0}to{background-position:200% 0}}
+body{animation:fadeIn .6s ease both}
+header{animation:up .6s ease both}
+h1{background:linear-gradient(90deg,var(--ink) 35%,var(--gold) 50%,var(--ink) 65%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite}
+h1 span{-webkit-text-fill-color:var(--red)}
+.card{animation:up .5s ease both;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 22px 44px -22px #000}
+.flash{animation:flipIn .5s ease both}
+.flash:hover{transform:translateY(-3px)}
+.big{animation:pop .5s ease both}
+.lv button,.tabs button{transition:transform .2s ease,background .25s ease,color .25s ease,box-shadow .25s ease}
+.lv button:hover,.tabs button:hover{transform:translateY(-2px)}
+.lv button.on{animation:glowPulse 2.4s ease-in-out infinite}
+.btn{transition:transform .2s ease,box-shadow .25s ease,background .25s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px -12px var(--gold)}
+.btn:active{transform:scale(.96)}
+.btn.p{background-size:200% auto}
+.opt{transition:transform .2s ease,background .25s ease,border-color .25s ease}
+.opt:hover{transform:translateX(5px);border-color:var(--gold)}
+.opt.ok{animation:pop .45s ease both}
+.opt.no{animation:shake .45s ease both}
+.bar i{animation:grow .9s cubic-bezier(.2,.8,.2,1) both;transition:width .6s ease}
+.hero{animation:up .8s ease both}
+.owl{display:inline-block;animation:float 3s ease-in-out infinite}
+.sc{animation:pop .7s ease both}
+small,.tag{animation:fadeIn .8s ease both}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Hiragino Sans","Noto Sans JP",system-ui,sans-serif;min-height:100vh}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+h1{font-family:"Hiragino Mincho ProN","Noto Serif JP",Georgia,serif;font-size:26px;margin:0;letter-spacing:.5px}
+h1 span{color:var(--red)}small{color:var(--mute)}
+.lv{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.lv button{padding:14px 0;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 16px Georgia,serif;cursor:pointer;transition:.2s}
+.lv button.on{background:linear-gradient(135deg,var(--gold),#8a6414);color:#fff;border-color:transparent;box-shadow:0 8px 22px -8px var(--gold)}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.tabs button{background:none;border:0;color:var(--mute);padding:10px 14px;font:600 14px inherit;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.tabs button.on{color:var(--ink);border-color:var(--gold)}
+.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin:6px 0 18px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--red));transition:.4s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:14px;box-shadow:0 14px 34px -22px #000}
+.flash{text-align:center;padding:44px 20px;cursor:pointer;min-height:190px;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.big{font-family:"Hiragino Mincho ProN","Noto Serif JP",serif;font-size:54px}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn{padding:11px 18px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 14px inherit;cursor:pointer}
+.btn.p{background:var(--gold);color:#fff;border-color:transparent}
+.jp{font-family:"Hiragino Mincho ProN","Noto Serif JP",serif;font-size:20px;color:var(--gold)}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:none;color:var(--ink);font:500 15px inherit;cursor:pointer}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 15%,transparent)}
+.opt.no{border-color:var(--red);background:color-mix(in srgb,var(--red) 15%,transparent)}
+.tag{display:inline-block;font-size:11px;letter-spacing:1px;color:var(--gold);text-transform:uppercase}
+ruby rt{font-size:.27em;color:var(--gold);letter-spacing:1px;font-family:system-ui,sans-serif}.rm{font-size:20px;color:var(--mute);letter-spacing:1.5px}
+.sc{font-size:54px;font-family:Georgia,serif;color:var(--gold)}
+
+.scene{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.scene svg{width:100%;height:100%;display:block}
+.scene::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,var(--bg) 100%);opacity:.55}
+.fp{transform-box:fill-box;transform-origin:center;animation:fall2 var(--t,14s) linear infinite;animation-delay:var(--d,0s)}
+@keyframes fall2{from{transform:translate(0,-30px) rotate(0)}to{transform:translate(-90px,1000px) rotate(540deg)}}
+:root[data-theme="dark"] .scene,:root:not([data-theme="light"]) .scene{filter:saturate(.7) brightness(.55)}
+.wrap{padding-top:26px}
+.card{border-radius:24px;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.hero{box-shadow:0 30px 60px -30px rgba(60,20,40,.45)}
+h1{font-size:30px;letter-spacing:1px}
+.lv{gap:10px}
+.lv button{border-radius:18px;padding:16px 0;font-size:17px}
+.tabs{background:color-mix(in srgb,var(--card) 75%,transparent);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);border-radius:18px;padding:5px;gap:4px;border-bottom:none;backdrop-filter:blur(10px)}
+.tabs button{border-radius:13px;padding:10px 16px;border-bottom:none;color:var(--mute)}
+.tabs button.on{background:linear-gradient(135deg,var(--gold),#8a6414);color:#fff;border-color:transparent;box-shadow:0 8px 18px -10px var(--gold)}
+.btn{border-radius:15px;padding:12px 20px;backdrop-filter:blur(8px)}
+.btn.p{box-shadow:0 10px 24px -12px var(--gold)}
+.opt{border-radius:16px;padding:15px 18px;background:color-mix(in srgb,var(--card) 90%,transparent)}
+.big{text-shadow:0 2px 24px rgba(184,137,43,.25)}
+.bar{height:8px;border-radius:99px}
+.bar i{border-radius:99px}
+.sc{font-size:60px}
+
+.walk{animation:walkAcross 26s linear infinite}
+@keyframes walkAcross{from{transform:translateX(-120px)}to{transform:translateX(1560px)}}
+.bob{animation:bob .5s ease-in-out infinite alternate}@keyframes bob{to{transform:translateY(-3px)}}
+.lg,.la{transform-box:fill-box;transform-origin:50% 0;animation:swA 1s ease-in-out infinite alternate}
+.lg2,.la2{transform-box:fill-box;transform-origin:50% 0;animation:swB 1s ease-in-out infinite alternate}
+@keyframes swA{from{transform:rotate(-25deg)}to{transform:rotate(25deg)}}
+@keyframes swB{from{transform:rotate(25deg)}to{transform:rotate(-25deg)}}
+@media (prefers-reduced-motion:reduce){.walk,.bob,.lg,.lg2,.la,.la2{animation:none!important}}
+
+.credit{animation:creditIn 2.6s ease-out both,creditGlow 5s ease-in-out 2.6s infinite}
+@keyframes creditIn{from{opacity:0;transform:translateY(-10px)}to{opacity:.85;transform:none}}
+@keyframes creditGlow{50%{opacity:.5}}
+@media (prefers-reduced-motion:reduce){.credit{animation:none;opacity:.85}}
+
+.lt{opacity:0;animation:ltIn .8s ease forwards;animation-delay:calc(var(--i)*.15s + .6s)}
+@keyframes ltIn{from{opacity:0}to{opacity:1}}
+.name{transform-box:fill-box;transform-origin:center;animation:breath 4.5s ease-in-out 3.5s infinite}
+@keyframes breath{50%{transform:scale(1.03)}}
+.cap{opacity:0;animation:fadeIn 1.2s ease .2s forwards}
+@media (prefers-reduced-motion:reduce){.lt,.cap{opacity:1!important;animation:none!important}.name{animation:none!important}}
+
+.lhead,.lrow{display:grid;grid-template-columns:44px 110px 1fr 1.3fr;gap:10px;align-items:center;padding:10px 12px;font-size:15px}
+.lhead{color:var(--mute);font-size:12px;letter-spacing:1px;text-transform:uppercase;border-bottom:1px solid var(--gold);position:sticky;top:0}
+.lrow{border-bottom:1px solid var(--line)}
+.lrow:hover{background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.lrow .ln{color:var(--mute);font-size:12px}
+@media (max-width:520px){.lhead,.lrow{grid-template-columns:30px 80px 1fr;font-size:14px}.lhead span:last-child,.lrow span:last-child{grid-column:2/4}}
+
+.ch{opacity:0;animation:chRise 1s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*.14s + .5s)}
+@keyframes chRise{0%{opacity:0;transform:translateY(70px)}60%{opacity:1}100%{opacity:1;transform:none}}
+.nm{animation:nmFloat 5s ease-in-out 2.6s infinite}
+@keyframes nmFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.uline{transform-box:fill-box;transform-origin:center;transform:scaleX(0);animation:uGrow 1.4s cubic-bezier(.2,.8,.2,1) 2.1s forwards}
+@keyframes uGrow{to{transform:scaleX(1)}}
+.spk{transform-box:fill-box;transform-origin:center;opacity:0;animation:spk 2.8s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes spk{0%,100%{opacity:0;transform:scale(.2)}50%{opacity:.9;transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.ch{opacity:1;animation:none}.nm{animation:none}.uline{transform:none;animation:none}.spk{animation:none;opacity:.5}}
+
+#intro{position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(circle at 50% 40%,#2c1a33 0%,#120c1a 72%);color:#f6e7d2;transition:opacity .9s ease,visibility .9s;overflow:hidden;cursor:pointer}
+#intro.out{opacity:0;visibility:hidden}
+.in-p{position:absolute;top:-30px;width:10px;height:7px;border-radius:70% 0 70% 0;background:#ffb7c8;opacity:.8;animation:inFall linear infinite}
+@keyframes inFall{from{transform:translateY(-30px) rotate(0)}to{transform:translateY(115vh) translateX(40px) rotate(420deg)}}
+.in-ring{position:absolute;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,190,210,.4);animation:ringPulse 2.6s ease-out infinite}
+@keyframes ringPulse{0%{transform:scale(.4);opacity:0}30%{opacity:1}100%{transform:scale(1.7);opacity:0}}
+.in-jp{font-family:"Hiragino Mincho ProN","Noto Serif JP",Georgia,serif;font-size:64px;letter-spacing:6px;animation:inRise 1.1s cubic-bezier(.2,.8,.2,1) .2s both}
+.in-jp span{color:#ff8fab}
+.in-en{font-family:Georgia,serif;font-style:italic;letter-spacing:3px;color:#e8c9a8;opacity:0;animation:fadeIn 1s ease 1s forwards}
+.in-bar{width:200px;height:3px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:14px}
+.in-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b8892b,#ff8fab);animation:inBar 2.8s ease .3s forwards}
+@keyframes inBar{to{width:100%}}
+@keyframes inRise{from{opacity:0;transform:translateY(30px);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
+.in-skip{opacity:0;animation:fadeIn 1s ease 1.6s forwards;margin-top:8px;color:#e8c9a8}
+@media (prefers-reduced-motion:reduce){#intro *{animation:none!important}.in-en,.in-skip,.in-by{opacity:1}.in-bar i{width:100%}}
+
+.in-by{font-family:Georgia,"Times New Roman",serif;font-style:italic;letter-spacing:2px;color:#ff8fab;opacity:0;animation:fadeIn 1s ease 2s forwards;margin-top:4px}
+
+.boat{animation:boatDrift 16s ease-in-out infinite alternate}
+@keyframes boatDrift{from{transform:translateX(-60px)}to{transform:translateX(420px)}}
+@media (prefers-reduced-motion:reduce){.boat{animation:none}}
+</style></head><body><div id="intro" onclick="introEnd()"><span class="in-p" style="left:81%;animation-duration:7.0s;animation-delay:-2.9s;transform:scale(1.08)"></span><span class="in-p" style="left:96%;animation-duration:8.6s;animation-delay:-4.2s;transform:scale(1.19)"></span><span class="in-p" style="left:33%;animation-duration:8.6s;animation-delay:-7.2s;transform:scale(0.68)"></span><span class="in-p" style="left:62%;animation-duration:9.5s;animation-delay:-3.0s;transform:scale(0.67)"></span><span class="in-p" style="left:33%;animation-duration:6.1s;animation-delay:-1.7s;transform:scale(0.80)"></span><span class="in-p" style="left:51%;animation-duration:6.6s;animation-delay:-6.4s;transform:scale(0.70)"></span><span class="in-p" style="left:81%;animation-duration:7.8s;animation-delay:-1.1s;transform:scale(1.28)"></span><span class="in-p" style="left:2%;animation-duration:6.8s;animation-delay:-1.7s;transform:scale(1.29)"></span><span class="in-p" style="left:23%;animation-duration:7.2s;animation-delay:-7.7s;transform:scale(0.98)"></span><span class="in-p" style="left:88%;animation-duration:8.5s;animation-delay:-1.5s;transform:scale(1.28)"></span><span class="in-p" style="left:27%;animation-duration:9.9s;animation-delay:-7.1s;transform:scale(0.81)"></span><span class="in-p" style="left:48%;animation-duration:7.7s;animation-delay:-7.5s;transform:scale(0.78)"></span><span class="in-p" style="left:44%;animation-duration:7.2s;animation-delay:-4.8s;transform:scale(0.60)"></span><span class="in-p" style="left:88%;animation-duration:8.8s;animation-delay:-0.5s;transform:scale(0.85)"></span><span class="in-p" style="left:41%;animation-duration:7.9s;animation-delay:-2.5s;transform:scale(0.94)"></span><span class="in-p" style="left:92%;animation-duration:6.7s;animation-delay:-2.0s;transform:scale(1.26)"></span><span class="in-p" style="left:97%;animation-duration:7.4s;animation-delay:-3.2s;transform:scale(0.98)"></span><span class="in-p" style="left:55%;animation-duration:7.5s;animation-delay:-4.6s;transform:scale(0.61)"></span><div class="in-ring"></div><div class="in-jp">日本語 <span>塾</span></div><div class="in-en">JLPT N5 · Nihongo Juku</div><div class="in-bar"><i></i></div><div class="in-by">Created by Manosh</div><small class="in-skip">tap to skip</small></div><div class="scene" aria-hidden="true"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice"><defs>
+<symbol id="sak" viewBox="-20 -20 40 40"><defs><radialGradient id="petG" cx=".5" cy=".3" r=".75"><stop offset="0" stop-color="#fff6f9"/><stop offset=".55" stop-color="#ffd0dd"/><stop offset="1" stop-color="#f28aa8"/></radialGradient></defs><path d="M0 -2 C-5 -3 -9 -8 -9 -13 C-9 -17 -5 -19 -2.5 -17.5 Q0 -15.5 2.5 -17.5 C5 -19 9 -17 9 -13 C9 -8 5 -3 0 -2 Z" fill="url(#petG)" stroke="#e4789a" stroke-width=".35" stroke-opacity=".5" transform="rotate(0)"/><path d="M0 -2 C-5 -3 -9 -8 -9 -13 C-9 -17 -5 -19 -2.5 -17.5 Q0 -15.5 2.5 -17.5 C5 -19 9 -17 9 -13 C9 -8 5 -3 0 -2 Z" fill="url(#petG)" stroke="#e4789a" stroke-width=".35" stroke-opacity=".5" transform="rotate(72)"/><path d="M0 -2 C-5 -3 -9 -8 -9 -13 C-9 -17 -5 -19 -2.5 -17.5 Q0 -15.5 2.5 -17.5 C5 -19 9 -17 9 -13 C9 -8 5 -3 0 -2 Z" fill="url(#petG)" stroke="#e4789a" stroke-width=".35" stroke-opacity=".5" transform="rotate(144)"/><path d="M0 -2 C-5 -3 -9 -8 -9 -13 C-9 -17 -5 -19 -2.5 -17.5 Q0 -15.5 2.5 -17.5 C5 -19 9 -17 9 -13 C9 -8 5 -3 0 -2 Z" fill="url(#petG)" stroke="#e4789a" stroke-width=".35" stroke-opacity=".5" transform="rotate(216)"/><path d="M0 -2 C-5 -3 -9 -8 -9 -13 C-9 -17 -5 -19 -2.5 -17.5 Q0 -15.5 2.5 -17.5 C5 -19 9 -17 9 -13 C9 -8 5 -3 0 -2 Z" fill="url(#petG)" stroke="#e4789a" stroke-width=".35" stroke-opacity=".5" transform="rotate(288)"/><path d="M0 -3 L0 -13" stroke="#f08aa8" stroke-width=".4" stroke-opacity=".35" transform="rotate(0)"/><path d="M0 -3 L0 -13" stroke="#f08aa8" stroke-width=".4" stroke-opacity=".35" transform="rotate(72)"/><path d="M0 -3 L0 -13" stroke="#f08aa8" stroke-width=".4" stroke-opacity=".35" transform="rotate(144)"/><path d="M0 -3 L0 -13" stroke="#f08aa8" stroke-width=".4" stroke-opacity=".35" transform="rotate(216)"/><path d="M0 -3 L0 -13" stroke="#f08aa8" stroke-width=".4" stroke-opacity=".35" transform="rotate(288)"/><g transform="rotate(0)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><g transform="rotate(45)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><g transform="rotate(90)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><g transform="rotate(135)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><g transform="rotate(180)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><g transform="rotate(225)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><g transform="rotate(270)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><g transform="rotate(315)"><line x1="0" y1="0" x2="0" y2="-5.5" stroke="#e98fa8" stroke-width=".5"/><circle cx="0" cy="-5.8" r="1" fill="#f7d26b"/></g><circle r="1.4" fill="#f4a6b8"/></symbol>
+<linearGradient id="bgSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe3ea"/><stop offset=".6" stop-color="#f6d6c8"/><stop offset="1" stop-color="#f3e6d2"/></linearGradient>
+<linearGradient id="nameG" gradientUnits="userSpaceOnUse" x1="420" y1="0" x2="820" y2="0"><stop offset="0" stop-color="#b8892b"/><stop offset=".5" stop-color="#e0588a"/><stop offset="1" stop-color="#b8892b"/><animate attributeName="x1" values="420;1000;420" dur="6s" repeatCount="indefinite"/><animate attributeName="x2" values="820;1400;820" dur="6s" repeatCount="indefinite"/></linearGradient>
+<filter id="nameGlow" x="-30%" y="-40%" width="160%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b"/><feFlood flood-color="#e0588a" flood-opacity=".45"/><feComposite in2="b" operator="in"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<linearGradient id="fujiShade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1a1838" stop-opacity="0"/><stop offset="1" stop-color="#1a1838" stop-opacity=".7"/></linearGradient><linearGradient id="hazeG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8f3" stop-opacity="0"/><stop offset=".5" stop-color="#fff8f3" stop-opacity=".55"/><stop offset="1" stop-color="#fff8f3" stop-opacity="0"/></linearGradient><radialGradient id="vig" cx=".5" cy=".5" r=".75"><stop offset=".6" stop-color="#2a1830" stop-opacity="0"/><stop offset="1" stop-color="#2a1830" stop-opacity=".35"/></radialGradient>
+<linearGradient id="lakeG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3c5a7a"/><stop offset="1" stop-color="#1b2a44"/></linearGradient>
+<linearGradient id="fujiG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a6f9a"/><stop offset="1" stop-color="#3b3d66"/></linearGradient>
+</defs>
+<rect width="1440" height="900" fill="url(#bgSky)"/>
+<ellipse cx="1000" cy="520" rx="330" ry="28" fill="#fff" opacity=".35"/>
+<ellipse cx="420" cy="640" rx="260" ry="22" fill="#fff" opacity=".3"/>
+<path d="M650 900 L1040 330 L1430 900 Z" fill="url(#fujiG)" opacity=".9"/>
+<path d="M940 432 L1040 330 L1140 432 Q1100 446 1080 432 Q1060 452 1040 438 Q1020 452 1000 432 Q978 446 940 432 Z" fill="#fff6f0" opacity=".95"/>
+<path d="M1040 330 L1040 900" stroke="#fff" stroke-opacity=".06" stroke-width="40"/>
+<rect y="760" width="1440" height="140" fill="#e9c9d6" opacity=".35"/><rect y="836" width="1440" height="64" fill="url(#lakeG)"/><path d="M1040 840 L1190 900 L890 900 Z" fill="#3b3d66" opacity=".35"/><path d="M1040 840 L1066 862 L1014 862 Z" fill="#fff6f0" opacity=".3"/><rect class="sh" x="300" y="852" width="170" height="1.5" fill="#fff" opacity=".18" style="animation-delay:-1s"/><rect class="sh" x="820" y="868" width="200" height="1.5" fill="#fff" opacity=".15" style="animation-delay:-2.4s"/><rect class="sh" x="110" y="884" width="150" height="1.5" fill="#fff" opacity=".14" style="animation-delay:-3.2s"/><rect class="sh" x="1180" y="880" width="180" height="1.5" fill="#fff" opacity=".16" style="animation-delay:-.6s"/><g transform="translate(0,1672) scale(1,-1)" opacity=".18"><g fill="#2b2a4a" opacity=".85"><rect x="1256" y="700" width="14" height="90"/><path d="M1232 700 L1294 700 L1283 690 L1243 690 Z"/><rect x="1254" y="690" width="18" height="10"/><path d="M1238 670 L1288 670 L1279 661 L1247 661 Z"/><rect x="1256" y="661" width="14" height="9"/><path d="M1246 642 L1280 642 L1274 634 L1252 634 Z"/><rect x="1262" y="630" width="4" height="5"/><rect x="1244" y="788" width="42" height="6"/></g></g><g class="boat"><path d="M480 868 L540 868 L528 882 L492 882 Z" fill="#2a2233" opacity=".85"/><rect x="508" y="846" width="2.5" height="22" fill="#2a2233" opacity=".85"/><path d="M511 848 L530 862 L511 862 Z" fill="#fff6f0" opacity=".8"/></g><path d="M1040 330 L1430 900 L1040 900 Z" fill="url(#fujiShade)"/><path d="M1040 330 L1000 470 M1040 330 L1078 430 M1040 330 L1022 560 M1040 330 L1110 520" stroke="#fff" stroke-opacity=".28" stroke-width="3" fill="none" stroke-linecap="round"/><rect y="560" width="1440" height="150" fill="url(#hazeG)"/><g fill="#2b2a4a" opacity=".85"><rect x="1256" y="700" width="14" height="90"/><path d="M1232 700 L1294 700 L1283 690 L1243 690 Z"/><rect x="1254" y="690" width="18" height="10"/><path d="M1238 670 L1288 670 L1279 661 L1247 661 Z"/><rect x="1256" y="661" width="14" height="9"/><path d="M1246 642 L1280 642 L1274 634 L1252 634 Z"/><rect x="1262" y="630" width="4" height="5"/><rect x="1244" y="788" width="42" height="6"/></g>
+<rect width="1440" height="900" fill="url(#vig)" pointer-events="none"/><g fill="none" stroke="#5a3a3a" stroke-linecap="round">
+<path d="M120 900 Q170 700 230 560 Q280 470 340 420" stroke-width="22"/>
+<path d="M230 560 Q300 500 390 480" stroke-width="10"/>
+<path d="M280 470 Q340 400 430 370" stroke-width="9"/>
+<path d="M340 420 Q390 330 480 300" stroke-width="9"/>
+<path d="M300 500 Q230 430 150 420" stroke-width="8"/>
+<path d="M170 690 Q120 640 60 630" stroke-width="7"/>
+</g>
+<g><g><use href="#sak" x="160" y="350" width="48" height="48" opacity="0.82" transform="rotate(36 184 374)"/><use href="#sak" x="184" y="377" width="51" height="51" opacity="0.75" transform="rotate(65 210 403)"/><use href="#sak" x="345" y="255" width="50" height="50" opacity="0.79" transform="rotate(1 370 280)"/><use href="#sak" x="383" y="363" width="32" height="32" opacity="0.93" transform="rotate(29 399 379)"/><use href="#sak" x="434" y="160" width="41" height="41" opacity="0.85" transform="rotate(52 455 181)"/><use href="#sak" x="95" y="306" width="44" height="44" opacity="0.86" transform="rotate(14 117 328)"/><use href="#sak" x="565" y="333" width="31" height="31" opacity="0.73" transform="rotate(11 580 348)"/><use href="#sak" x="554" y="149" width="42" height="42" opacity="0.88" transform="rotate(70 575 170)"/><use href="#sak" x="288" y="391" width="34" height="34" opacity="0.82" transform="rotate(4 305 408)"/><use href="#sak" x="503" y="264" width="32" height="32" opacity="0.75" transform="rotate(25 519 280)"/><use href="#sak" x="486" y="471" width="50" height="50" opacity="0.73" transform="rotate(9 511 496)"/><use href="#sak" x="317" y="420" width="52" height="52" opacity="0.79" transform="rotate(25 343 446)"/><use href="#sak" x="154" y="414" width="41" height="41" opacity="0.94" transform="rotate(46 174 434)"/><use href="#sak" x="337" y="338" width="38" height="38" opacity="0.80" transform="rotate(62 356 357)"/><use href="#sak" x="96" y="190" width="34" height="34" opacity="0.70" transform="rotate(63 113 207)"/><use href="#sak" x="112" y="418" width="46" height="46" opacity="0.76" transform="rotate(66 135 441)"/><use href="#sak" x="389" y="301" width="44" height="44" opacity="0.75" transform="rotate(14 411 323)"/><use href="#sak" x="167" y="460" width="39" height="39" opacity="0.79" transform="rotate(42 187 480)"/><use href="#sak" x="387" y="298" width="36" height="36" opacity="0.72" transform="rotate(21 405 316)"/><use href="#sak" x="491" y="224" width="50" height="50" opacity="0.74" transform="rotate(47 516 249)"/><use href="#sak" x="96" y="484" width="44" height="44" opacity="0.80" transform="rotate(30 118 506)"/><use href="#sak" x="160" y="516" width="45" height="45" opacity="0.82" transform="rotate(44 183 539)"/><use href="#sak" x="274" y="483" width="36" height="36" opacity="0.74" transform="rotate(31 292 501)"/><use href="#sak" x="110" y="359" width="51" height="51" opacity="0.71" transform="rotate(61 135 384)"/><use href="#sak" x="221" y="160" width="52" height="52" opacity="0.71" transform="rotate(37 247 186)"/><use href="#sak" x="207" y="227" width="40" height="40" opacity="0.86" transform="rotate(43 227 247)"/><use href="#sak" x="149" y="212" width="49" height="49" opacity="0.71" transform="rotate(61 174 237)"/><use href="#sak" x="149" y="470" width="44" height="44" opacity="0.71" transform="rotate(61 171 492)"/><use href="#sak" x="183" y="322" width="51" height="51" opacity="0.85" transform="rotate(47 208 347)"/><use href="#sak" x="295" y="385" width="45" height="45" opacity="0.78" transform="rotate(61 318 408)"/><use href="#sak" x="354" y="442" width="37" height="37" opacity="0.80" transform="rotate(1 373 461)"/><use href="#sak" x="149" y="511" width="31" height="31" opacity="0.86" transform="rotate(41 164 526)"/><use href="#sak" x="516" y="439" width="41" height="41" opacity="0.89" transform="rotate(51 536 459)"/><use href="#sak" x="498" y="213" width="33" height="33" opacity="0.80" transform="rotate(12 515 230)"/><use href="#sak" x="172" y="149" width="47" height="47" opacity="0.72" transform="rotate(18 195 172)"/><use href="#sak" x="141" y="476" width="37" height="37" opacity="0.83" transform="rotate(38 160 495)"/><use href="#sak" x="245" y="341" width="43" height="43" opacity="0.86" transform="rotate(28 266 362)"/><use href="#sak" x="166" y="228" width="52" height="52" opacity="0.88" transform="rotate(25 192 254)"/><use href="#sak" x="365" y="531" width="31" height="31" opacity="0.92" transform="rotate(64 381 547)"/><use href="#sak" x="471" y="164" width="51" height="51" opacity="0.80" transform="rotate(1 496 189)"/><use href="#sak" x="522" y="172" width="40" height="40" opacity="0.91" transform="rotate(22 542 192)"/><use href="#sak" x="191" y="261" width="55" height="55" opacity="0.89" transform="rotate(40 219 289)"/><use href="#sak" x="208" y="342" width="34" height="34" opacity="0.90" transform="rotate(37 225 359)"/><use href="#sak" x="490" y="420" width="43" height="43" opacity="0.84" transform="rotate(12 511 441)"/><use href="#sak" x="107" y="397" width="45" height="45" opacity="0.94" transform="rotate(41 130 420)"/><use href="#sak" x="234" y="285" width="48" height="48" opacity="0.89" transform="rotate(67 258 309)"/></g></g>
+<g><use class="fp" href="#sak" x="1112" y="-44" width="29" height="29" opacity=".9" style="--t:15.4s;--d:-14.9s"/><use class="fp" href="#sak" x="1284" y="-47" width="35" height="35" opacity=".9" style="--t:15.4s;--d:-11.5s"/><use class="fp" href="#sak" x="1109" y="-45" width="31" height="31" opacity=".9" style="--t:15.1s;--d:-2.5s"/><use class="fp" href="#sak" x="1311" y="-44" width="29" height="29" opacity=".9" style="--t:13.2s;--d:-5.7s"/><use class="fp" href="#sak" x="425" y="-43" width="27" height="27" opacity=".9" style="--t:17.2s;--d:-2.4s"/><use class="fp" href="#sak" x="512" y="-48" width="35" height="35" opacity=".9" style="--t:13.7s;--d:-7.8s"/><use class="fp" href="#sak" x="887" y="-46" width="32" height="32" opacity=".9" style="--t:12.4s;--d:-11.3s"/><use class="fp" href="#sak" x="57" y="-49" width="38" height="38" opacity=".9" style="--t:13.5s;--d:-14.8s"/><use class="fp" href="#sak" x="761" y="-48" width="35" height="35" opacity=".9" style="--t:16.3s;--d:-9.1s"/><use class="fp" href="#sak" x="410" y="-47" width="35" height="35" opacity=".9" style="--t:11.2s;--d:-13.7s"/><use class="fp" href="#sak" x="1277" y="-49" width="37" height="37" opacity=".9" style="--t:12.0s;--d:-3.3s"/><use class="fp" href="#sak" x="437" y="-50" width="40" height="40" opacity=".9" style="--t:13.0s;--d:-12.1s"/><use class="fp" href="#sak" x="1210" y="-47" width="33" height="33" opacity=".9" style="--t:14.2s;--d:-13.8s"/><use class="fp" href="#sak" x="689" y="-50" width="39" height="39" opacity=".9" style="--t:13.5s;--d:-3.8s"/><use class="fp" href="#sak" x="786" y="-48" width="36" height="36" opacity=".9" style="--t:16.9s;--d:-3.3s"/><use class="fp" href="#sak" x="951" y="-48" width="36" height="36" opacity=".9" style="--t:17.5s;--d:-10.9s"/><use class="fp" href="#sak" x="218" y="-46" width="33" height="33" opacity=".9" style="--t:17.3s;--d:-14.4s"/><use class="fp" href="#sak" x="1311" y="-47" width="33" height="33" opacity=".9" style="--t:12.3s;--d:-10.5s"/><use class="fp" href="#sak" x="719" y="-49" width="38" height="38" opacity=".9" style="--t:17.4s;--d:-13.4s"/><use class="fp" href="#sak" x="354" y="-43" width="27" height="27" opacity=".9" style="--t:17.3s;--d:-15.8s"/><use class="fp" href="#sak" x="784" y="-43" width="26" height="26" opacity=".9" style="--t:13.8s;--d:-13.0s"/><use class="fp" href="#sak" x="166" y="-48" width="35" height="35" opacity=".9" style="--t:11.7s;--d:-16.0s"/><use class="fp" href="#sak" x="1335" y="-43" width="27" height="27" opacity=".9" style="--t:12.9s;--d:-17.3s"/><use class="fp" href="#sak" x="637" y="-45" width="30" height="30" opacity=".9" style="--t:15.0s;--d:-9.6s"/><use class="fp" href="#sak" x="820" y="-47" width="34" height="34" opacity=".9" style="--t:12.5s;--d:-2.2s"/><use class="fp" href="#sak" x="833" y="-46" width="32" height="32" opacity=".9" style="--t:15.3s;--d:-13.3s"/></g>
+<g class="walk"><g transform="translate(0,830)"><g class="bob">
+<g transform="translate(0,-60)"><line class="lg" x1="0" y1="0" x2="-5" y2="60" stroke="#2a2233" stroke-width="11" stroke-linecap="round"/></g>
+<g transform="translate(0,-60)"><line class="lg2" x1="0" y1="0" x2="5" y2="60" stroke="#2a2233" stroke-width="11" stroke-linecap="round"/></g>
+<rect x="-13" y="-102" width="26" height="46" rx="11" fill="#2a2233"/>
+<g transform="translate(0,-92)"><line class="la" x1="0" y1="0" x2="0" y2="40" stroke="#2a2233" stroke-width="9" stroke-linecap="round"/></g>
+<g transform="translate(0,-92)"><line class="la2" x1="0" y1="0" x2="0" y2="40" stroke="#2a2233" stroke-width="9" stroke-linecap="round"/></g>
+<circle cx="0" cy="-116" r="13" fill="#2a2233"/>
+<path d="M-13 -119 Q0 -134 13 -119 Q6 -124 0 -123 Q-6 -124 -13 -119 Z" fill="#2a2233"/>
+</g></g></g>
+<text class="cap" x="720" y="392" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-style="italic" font-size="22" letter-spacing="4" fill="#6b3f57">Created by</text>
+<g class="nm" filter="url(#nameGlow)"><g fill="url(#nameG)" font-family="Georgia,'Times New Roman',serif" font-size="104" font-weight="700"><text class="ch" x="500" y="466" text-anchor="middle" style="--i:0">M</text><text class="ch" x="588" y="466" text-anchor="middle" style="--i:1">a</text><text class="ch" x="676" y="466" text-anchor="middle" style="--i:2">n</text><text class="ch" x="764" y="466" text-anchor="middle" style="--i:3">o</text><text class="ch" x="852" y="466" text-anchor="middle" style="--i:4">s</text><text class="ch" x="940" y="466" text-anchor="middle" style="--i:5">h</text></g></g>
+<rect class="uline" x="540" y="492" width="360" height="3" rx="2" fill="url(#nameG)"/>
+<circle class="spk" cx="430" cy="400" r="4" fill="#f4b6c9" style="--d:0s"/><circle class="spk" cx="1010" cy="420" r="6" fill="#f4b6c9" style="--d:0.8s"/><circle class="spk" cx="470" cy="520" r="8" fill="#f4b6c9" style="--d:1.6s"/><circle class="spk" cx="975" cy="505" r="4" fill="#f4b6c9" style="--d:2.2s"/><circle class="spk" cx="720" cy="330" r="6" fill="#f4b6c9" style="--d:0.4s"/><circle class="spk" cx="600" cy="300" r="8" fill="#f4b6c9" style="--d:1.2s"/><circle class="spk" cx="860" cy="312" r="4" fill="#f4b6c9" style="--d:2.6s"/>
+</svg></div>
+<div class="wrap">
+<div class="hero"><svg viewBox="0 0 760 230" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14183a"/><stop offset=".45" stop-color="#4a3a6e"/><stop offset=".78" stop-color="#e58b7c"/><stop offset="1" stop-color="#ffd3a0"/></linearGradient>
+<radialGradient id="sunG" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff4da"/><stop offset=".6" stop-color="#ffb37a"/><stop offset="1" stop-color="#ff7e5f"/></radialGradient>
+<radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffd9a8" stop-opacity="0"/></radialGradient>
+<linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6d5a8c"/><stop offset="1" stop-color="#8c6f92"/></linearGradient>
+<linearGradient id="mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f3a66"/><stop offset="1" stop-color="#2a2750"/></linearGradient>
+<linearGradient id="fuji" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#352f58"/><stop offset="1" stop-color="#1d1b38"/></linearGradient>
+<linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c4c76"/><stop offset="1" stop-color="#15243f"/></linearGradient>
+<linearGradient id="pk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe0ea"/><stop offset="1" stop-color="#f08aa5"/></linearGradient>
+<filter id="soft" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+</defs>
+<rect width="760" height="230" fill="url(#sky)"/><circle class="tw" cx="341" cy="27" r="1.5" fill="#fff" style="--d:2.0s"/><circle class="tw" cx="84" cy="76" r="0.6" fill="#fff" style="--d:1.1s"/><circle class="tw" cx="69" cy="72" r="0.9" fill="#fff" style="--d:0.1s"/><circle class="tw" cx="454" cy="61" r="0.6" fill="#fff" style="--d:0.7s"/><circle class="tw" cx="574" cy="62" r="0.6" fill="#fff" style="--d:2.5s"/><circle class="tw" cx="136" cy="36" r="0.6" fill="#fff" style="--d:1.7s"/><circle class="tw" cx="416" cy="14" r="0.9" fill="#fff" style="--d:0.1s"/><circle class="tw" cx="146" cy="45" r="1.5" fill="#fff" style="--d:0.4s"/><circle class="tw" cx="130" cy="81" r="1.2" fill="#fff" style="--d:1.7s"/><circle class="tw" cx="708" cy="31" r="0.6" fill="#fff" style="--d:1.7s"/><circle class="tw" cx="664" cy="32" r="1.2" fill="#fff" style="--d:0.3s"/><circle class="tw" cx="739" cy="16" r="0.6" fill="#fff" style="--d:1.9s"/><circle class="tw" cx="518" cy="76" r="1.5" fill="#fff" style="--d:2.3s"/><circle class="tw" cx="486" cy="82" r="1.5" fill="#fff" style="--d:1.1s"/><circle class="tw" cx="264" cy="31" r="0.9" fill="#fff" style="--d:0.2s"/><circle class="tw" cx="317" cy="75" r="1.5" fill="#fff" style="--d:2.6s"/><circle class="tw" cx="469" cy="44" r="0.6" fill="#fff" style="--d:0.4s"/><circle class="tw" cx="438" cy="29" r="1.2" fill="#fff" style="--d:0.5s"/><circle class="tw" cx="510" cy="61" r="0.6" fill="#fff" style="--d:2.9s"/><circle class="tw" cx="89" cy="79" r="1.2" fill="#fff" style="--d:1.0s"/><circle class="tw" cx="368" cy="84" r="1.5" fill="#fff" style="--d:1.7s"/><circle class="tw" cx="477" cy="16" r="0.6" fill="#fff" style="--d:2.8s"/><circle class="tw" cx="495" cy="16" r="0.6" fill="#fff" style="--d:2.2s"/><circle class="tw" cx="327" cy="90" r="1.5" fill="#fff" style="--d:0.9s"/><circle class="tw" cx="405" cy="52" r="0.6" fill="#fff" style="--d:2.8s"/><circle class="tw" cx="373" cy="29" r="0.6" fill="#fff" style="--d:1.5s"/><circle class="tw" cx="233" cy="44" r="0.9" fill="#fff" style="--d:2.2s"/><circle class="tw" cx="417" cy="58" r="1.5" fill="#fff" style="--d:0.2s"/><circle class="tw" cx="469" cy="59" r="1.2" fill="#fff" style="--d:2.7s"/><circle class="tw" cx="450" cy="78" r="1.2" fill="#fff" style="--d:2.1s"/><circle class="tw" cx="377" cy="56" r="0.9" fill="#fff" style="--d:0.5s"/><circle class="tw" cx="190" cy="27" r="0.9" fill="#fff" style="--d:2.0s"/><circle class="tw" cx="22" cy="70" r="0.9" fill="#fff" style="--d:0.8s"/><circle class="tw" cx="14" cy="26" r="1.5" fill="#fff" style="--d:1.6s"/>
+<circle cx="300" cy="128" r="80" fill="url(#glow)"/>
+<circle class="sun" cx="300" cy="128" r="36" fill="url(#sunG)"/>
+<g class="cl" fill="#ffe9dc" opacity=".35" filter="url(#soft)"><ellipse cx="120" cy="70" rx="70" ry="10"/><ellipse cx="170" cy="62" rx="40" ry="9"/></g>
+<g class="cl" fill="#ffe9dc" opacity=".25" filter="url(#soft)"><ellipse cx="600" cy="54" rx="80" ry="9"/></g>
+<path d="M0 150 L80 112 L150 138 L235 98 L320 136 L410 104 L500 140 L600 110 L690 134 L760 112 L760 230 L0 230 Z" fill="url(#far)" opacity=".7"/>
+<path d="M430 178 L560 44 L690 178 Z" fill="url(#fuji)"/>
+<path d="M505 88 L560 44 L615 88 Q590 96 575 90 Q560 102 545 90 Q525 98 505 88 Z" fill="#fff6ec" opacity=".95"/>
+<path d="M0 170 L110 150 L200 166 L300 146 L420 172 L0 230 Z" fill="url(#mid)"/>
+<rect y="172" width="760" height="58" fill="url(#sea)"/><rect class="sh" x="198" y="172" width="148" height="1.5" fill="#fff" opacity=".12" style="animation-delay:-2.4s"/><rect class="sh" x="352" y="184" width="117" height="1.5" fill="#fff" opacity=".12" style="animation-delay:-3.2s"/><rect class="sh" x="357" y="196" width="106" height="1.5" fill="#fff" opacity=".12" style="animation-delay:-0.3s"/><rect class="sh" x="104" y="208" width="89" height="1.5" fill="#fff" opacity=".12" style="animation-delay:-1.9s"/>
+<g fill="#ff5a4f" opacity=".35" filter="url(#soft)"><rect x="128" y="170" width="46" height="8"/></g>
+<g fill="#c23a2e"><rect x="136" y="140" width="6" height="34"/><rect x="164" y="140" width="6" height="34"/><rect x="124" y="136" width="54" height="5"/><rect x="130" y="150" width="42" height="3"/></g>
+<ellipse class="pet" cx="644" cy="-10" rx="4.7" ry="3.3" fill="url(#pk)" opacity=".9" style="--t:12.1s;--d:-6.2s"/><ellipse class="pet" cx="652" cy="-10" rx="5.0" ry="3.0" fill="url(#pk)" opacity=".9" style="--t:10.7s;--d:-10.5s"/><ellipse class="pet" cx="716" cy="-10" rx="5.4" ry="2.4" fill="url(#pk)" opacity=".9" style="--t:10.4s;--d:-1.2s"/><ellipse class="pet" cx="669" cy="-10" rx="4.2" ry="2.1" fill="url(#pk)" opacity=".9" style="--t:13.9s;--d:-5.3s"/><ellipse class="pet" cx="132" cy="-10" rx="4.0" ry="1.9" fill="url(#pk)" opacity=".9" style="--t:8.0s;--d:-1.8s"/><ellipse class="pet" cx="123" cy="-10" rx="5.8" ry="2.8" fill="url(#pk)" opacity=".9" style="--t:8.4s;--d:-2.5s"/><ellipse class="pet" cx="405" cy="-10" rx="3.4" ry="2.2" fill="url(#pk)" opacity=".9" style="--t:10.1s;--d:-4.4s"/><ellipse class="pet" cx="145" cy="-10" rx="3.3" ry="2.6" fill="url(#pk)" opacity=".9" style="--t:13.9s;--d:-5.8s"/><ellipse class="pet" cx="339" cy="-10" rx="3.3" ry="2.0" fill="url(#pk)" opacity=".9" style="--t:10.1s;--d:-3.2s"/><ellipse class="pet" cx="728" cy="-10" rx="3.5" ry="1.8" fill="url(#pk)" opacity=".9" style="--t:13.7s;--d:-6.3s"/><ellipse class="pet" cx="170" cy="-10" rx="5.1" ry="3.3" fill="url(#pk)" opacity=".9" style="--t:12.5s;--d:-3.6s"/><ellipse class="pet" cx="678" cy="-10" rx="5.6" ry="2.9" fill="url(#pk)" opacity=".9" style="--t:9.6s;--d:-4.4s"/><ellipse class="pet" cx="191" cy="-10" rx="4.1" ry="2.2" fill="url(#pk)" opacity=".9" style="--t:11.2s;--d:-6.0s"/><ellipse class="pet" cx="671" cy="-10" rx="3.7" ry="3.1" fill="url(#pk)" opacity=".9" style="--t:13.9s;--d:-10.2s"/><ellipse class="pet" cx="265" cy="-10" rx="5.5" ry="3.0" fill="url(#pk)" opacity=".9" style="--t:9.4s;--d:-6.2s"/><ellipse class="pet" cx="384" cy="-10" rx="5.2" ry="3.4" fill="url(#pk)" opacity=".9" style="--t:12.7s;--d:-5.7s"/></svg></div>
+<header><div><h1>日本語 <span>塾</span></h1><small>JLPT N5 → N2 study hub</small><div class="tag" id="xp">XP ${xp}</div></div><div class="row"><button class="btn" id="fg"></button><button class="btn" id="th">◐</button></div></header>
+<div class="card" style="display:flex;gap:12px;align-items:center;padding:14px 16px"><div class="owl" style="font-size:38px">🦉</div><div id="bub" style="flex:1;font-size:14px">Konnichiwa! Tap a tab, or press Voice and say next, back, listen or speak.</div><button class="btn" onclick="voiceCmd()">🎙 Voice</button></div><div class="row" style="margin:-4px 0 14px"><input id="cmd" placeholder="Type: next / back / listen / speak" style="padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:15px;flex:1;max-width:360px"><button class="btn" onclick="cmdText()">Go</button></div>
+<div class="lv" id="lv"></div><div class="tabs" id="tabs"></div><div id="main"></div></div>
+<script>
+const P=s=>s.trim().split("\n").map(x=>x.split("|"));
+const KA="あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをんがぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ";
+const RO="a i u e o ka ki ku ke ko sa shi su se so ta chi tsu te to na ni nu ne no ha hi fu he ho ma mi mu me mo ya yu yo ra ri ru re ro wa o n ga gi gu ge go za ji zu ze zo da ji zu de do ba bi bu be bo pa pi pu pe po".split(" ");
+function rom(s){s=s.replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));let o="",d=false;for(let i=0;i<s.length;i++){const c=s[i],n=s[i+1],j=KA.indexOf(c);if(c=="っ"){d=true;continue}if(c=="ー"){o+=o.slice(-1);continue}if(j<0){o+=c;continue}let r=RO[j];if(n&&"ゃゅょ".includes(n)){const v="auo"["ゃゅょ".indexOf(n)],st=r.slice(0,-1);r=(["sh","ch","j"].includes(st)?st:st+"y")+v;i++}if(d){r=(r.startsWith("ch")?"t":r[0])+r;d=false}o+=r}return o}
+const ry=(k,r)=>/[一-龯]/.test(k)?`<ruby>${k}<rt>${r.split("・")[0]}</rt></ruby>`:k;
+const D={
+N5:{v:P(`水|みず|water
+食べる|たべる|to eat
+飲む|のむ|to drink
+学校|がっこう|school
+友達|ともだち|friend
+本|ほん|book
+先生|せんせい|teacher
+学生|がくせい|student
+私|わたし|I, me
+家|いえ|house
+部屋|へや|room
+会社|かいしゃ|company
+駅|えき|station
+電車|でんしゃ|train
+車|くるま|car
+自転車|じてんしゃ|bicycle
+飛行機|ひこうき|airplane
+道|みち|road
+町|まち|town
+国|くに|country
+店|みせ|shop
+銀行|ぎんこう|bank
+病院|びょういん|hospital
+公園|こうえん|park
+図書館|としょかん|library
+映画|えいが|movie
+音楽|おんがく|music
+写真|しゃしん|photo
+新聞|しんぶん|newspaper
+雑誌|ざっし|magazine
+手紙|てがみ|letter
+電話|でんわ|telephone
+天気|てんき|weather
+雨|あめ|rain
+雪|ゆき|snow
+花|はな|flower
+木|き|tree
+犬|いぬ|dog
+猫|ねこ|cat
+魚|さかな|fish
+鳥|とり|bird
+肉|にく|meat
+野菜|やさい|vegetable
+果物|くだもの|fruit
+卵|たまご|egg
+ご飯|ごはん|rice, meal
+朝ご飯|あさごはん|breakfast
+昼ご飯|ひるごはん|lunch
+晩ご飯|ばんごはん|dinner
+お茶|おちゃ|tea
+牛乳|ぎゅうにゅう|milk
+パン|ぱん|bread
+料理|りょうり|cooking
+父|ちち|my father
+母|はは|my mother
+兄|あに|older brother
+姉|あね|older sister
+弟|おとうと|younger brother
+妹|いもうと|younger sister
+家族|かぞく|family
+子供|こども|child
+男|おとこ|man
+女|おんな|woman
+名前|なまえ|name
+仕事|しごと|work, job
+医者|いしゃ|doctor
+今日|きょう|today
+明日|あした|tomorrow
+昨日|きのう|yesterday
+今|いま|now
+朝|あさ|morning
+昼|ひる|noon
+夜|よる|night
+毎日|まいにち|every day
+毎朝|まいあさ|every morning
+今週|こんしゅう|this week
+来週|らいしゅう|next week
+先週|せんしゅう|last week
+来年|らいねん|next year
+去年|きょねん|last year
+時間|じかん|time
+何時|なんじ|what time
+春|はる|spring
+夏|なつ|summer
+秋|あき|autumn
+冬|ふゆ|winter
+行く|いく|to go
+来る|くる|to come
+帰る|かえる|to return
+見る|みる|to see
+聞く|きく|to listen, ask
+話す|はなす|to speak
+読む|よむ|to read
+書く|かく|to write
+買う|かう|to buy
+売る|うる|to sell
+待つ|まつ|to wait
+持つ|もつ|to hold
+使う|つかう|to use
+作る|つくる|to make
+会う|あう|to meet
+教える|おしえる|to teach
+習う|ならう|to learn
+働く|はたらく|to work
+休む|やすむ|to rest
+起きる|おきる|to wake up
+寝る|ねる|to sleep
+歩く|あるく|to walk
+走る|はしる|to run
+泳ぐ|およぐ|to swim
+歌う|うたう|to sing
+遊ぶ|あそぶ|to play
+入る|はいる|to enter
+出る|でる|to exit
+開ける|あける|to open
+閉める|しめる|to close
+着る|きる|to wear
+住む|すむ|to live
+知る|しる|to know
+分かる|わかる|to understand
+大きい|おおきい|big
+小さい|ちいさい|small
+高い|たかい|tall, expensive
+安い|やすい|cheap
+新しい|あたらしい|new
+古い|ふるい|old
+長い|ながい|long
+短い|みじかい|short
+多い|おおい|many
+少ない|すくない|few
+暑い|あつい|hot (weather)
+寒い|さむい|cold (weather)
+美味しい|おいしい|delicious
+楽しい|たのしい|fun
+忙しい|いそがしい|busy
+難しい|むずかしい|difficult
+易しい|やさしい|easy
+早い|はやい|early, fast
+遅い|おそい|slow, late
+良い|いい|good
+悪い|わるい|bad
+白い|しろい|white
+黒い|くろい|black
+赤い|あかい|red
+青い|あおい|blue
+綺麗|きれい|pretty, clean
+有名|ゆうめい|famous
+元気|げんき|healthy, lively
+好き|すき|to like
+嫌い|きらい|to dislike
+上手|じょうず|skillful
+下手|へた|unskilled
+静か|しずか|quiet
+賑やか|にぎやか|lively
+人|ひと|person
+あなた|あなた|you
+彼|かれ|he, boyfriend
+彼女|かのじょ|she, girlfriend
+生徒|せいと|student (school)
+兄弟|きょうだい|siblings
+おじいさん|おじいさん|grandfather
+おばあさん|おばあさん|grandmother
+タクシー|たくしー|taxi
+バス|ばす|bus
+切符|きっぷ|ticket
+窓|まど|window
+机|つくえ|desk
+椅子|いす|chair
+ドア|どあ|door
+かばん|かばん|bag
+財布|さいふ|wallet
+眼鏡|めがね|glasses
+時計|とけい|clock, watch
+傘|かさ|umbrella
+薬|くすり|medicine
+鉛筆|えんぴつ|pencil
+辞書|じしょ|dictionary
+テレビ|てれび|television
+靴|くつ|shoes
+帽子|ぼうし|hat
+お金|おかね|money
+休み|やすみ|holiday, rest
+桜|さくら|cherry blossom
+海|うみ|sea
+川|かわ|river
+空|そら|sky
+空港|くうこう|airport
+ホテル|ほてる|hotel
+レストラン|れすとらん|restaurant
+日本語|にほんご|Japanese language
+英語|えいご|English language
+言葉|ことば|word, language
+お酒|おさけ|alcohol, sake
+コーヒー|こーひー|coffee
+ジュース|じゅーす|juice
+ビール|びーる|beer
+寿司|すし|sushi
+鍵|かぎ|key
+はい|はい|yes
+いいえ|いいえ|no
+ありがとう|ありがとう|thank you
+すみません|すみません|excuse me, sorry
+こんにちは|こんにちは|hello (daytime)
+おはよう|おはよう|good morning
+こんばんは|こんばんは|good evening
+さようなら|さようなら|goodbye
+おやすみ|おやすみ|good night
+いただきます|いただきます|let's eat (before meal)
+ごちそうさま|ごちそうさま|thank you for the meal
+ください|ください|please give me
+どうぞ|どうぞ|please, go ahead
+ちょっと|ちょっと|a little
+たくさん|たくさん|a lot
+もう|もう|already
+まだ|まだ|not yet
+とても|とても|very
+少し|すこし|a little
+もっと|もっと|more
+いつも|いつも|always
+よく|よく|often, well
+ときどき|ときどき|sometimes
+全部|ぜんぶ|all
+一緒に|いっしょに|together
+ゆっくり|ゆっくり|slowly
+早く|はやく|quickly
+たぶん|たぶん|probably
+本当|ほんとう|really
+いつ|いつ|when
+どこ|どこ|where
+誰|だれ|who
+いくら|いくら|how much
+どう|どう|how
+ここ|ここ|here
+そこ|そこ|there
+あそこ|あそこ|over there
+これ|これ|this
+それ|それ|that
+あれ|あれ|that over there
+一昨日|おととい|day before yesterday
+明後日|あさって|day after tomorrow
+広い|ひろい|spacious
+狭い|せまい|narrow
+重い|おもい|heavy
+軽い|かるい|light
+近い|ちかい|near
+遠い|とおい|far
+明るい|あかるい|bright
+暗い|くらい|dark
+痛い|いたい|painful
+うれしい|うれしい|happy
+悲しい|かなしい|sad
+つまらない|つまらない|boring
+買い物|かいもの|shopping
+出かける|でかける|to go out
+帰る|かえる|to return home
+乗る|のる|to ride
+降りる|おりる|to get off
+始める|はじめる|to begin
+終わる|おわる|to end
+手伝う|てつだう|to help
+貸す|かす|to lend
+借りる|かりる|to borrow
+もらう|もらう|to receive
+あげる|あげる|to give
+洗う|あらう|to wash
+消す|けす|to turn off
+つける|つける|to turn on
+撮る|とる|to take (a photo)
+言う|いう|to say
+思う|おもう|to think
+笑う|わらう|to laugh
+疲れる|つかれる|to get tired
+ある|ある|to exist (things)
+いる|いる|to exist (people)
+大学|だいがく|university
+病気|びょうき|illness
+会議|かいぎ|meeting
+旅行|りょこう|trip
+試験|しけん|exam
+宿題|しゅくだい|homework
+授業|じゅぎょう|class
+教室|きょうしつ|classroom
+郵便局|ゆうびんきょく|post office
+交番|こうばん|police box
+警察|けいさつ|police
+世界|せかい|world
+空気|くうき|air
+電気|でんき|electricity, light
+階段|かいだん|stairs
+エレベーター|えれべーたー|elevator
+冷蔵庫|れいぞうこ|refrigerator
+洗濯|せんたく|laundry
+掃除|そうじ|cleaning
+お風呂|おふろ|bath
+トイレ|といれ|toilet
+シャワー|しゃわー|shower
+ベッド|べっど|bed
+玄関|げんかん|entrance
+庭|にわ|garden
+台所|だいどころ|kitchen
+階|かい|floor
+野球|やきゅう|baseball
+サッカー|さっかー|soccer
+運動|うんどう|exercise
+絵|え|picture
+お祭り|おまつり|festival
+誕生日|たんじょうび|birthday
+結婚|けっこん|marriage
+プレゼント|ぷれぜんと|present, gift
+旅館|りょかん|Japanese inn
+温泉|おんせん|hot spring
+神社|じんじゃ|shrine
+お寺|おてら|temple
+城|しろ|castle
+富士山|ふじさん|Mt. Fuji
+東京|とうきょう|Tokyo
+京都|きょうと|Kyoto
+大阪|おおさか|Osaka
+日本|にほん|Japan
+外国|がいこく|foreign country
+外国人|がいこくじん|foreigner
+切手|きって|stamp
+紙|かみ|paper
+箱|はこ|box
+袋|ふくろ|bag, sack
+皿|さら|plate
+コップ|こっぷ|cup, glass
+ナイフ|ないふ|knife
+フォーク|ふぉーく|fork
+スプーン|すぷーん|spoon
+箸|はし|chopsticks
+砂糖|さとう|sugar
+塩|しお|salt
+醤油|しょうゆ|soy sauce
+甘い|あまい|sweet
+辛い|からい|spicy
+苦い|にがい|bitter
+暇|ひま|free time
+いっぱい|いっぱい|full, many
+大丈夫|だいじょうぶ|all right
+必要|ひつよう|necessary
+休憩|きゅうけい|break
+散歩|さんぽ|walk
+約束|やくそく|promise
+勉強|べんきょう|study
+練習|れんしゅう|practice
+質問|しつもん|question
+答え|こたえ|answer
+意味|いみ|meaning
+住所|じゅうしょ|address
+番号|ばんごう|number
+名刺|めいし|business card
+今夜|こんや|tonight
+毎晩|まいばん|every night
+午前|ごぜん|a.m.
+午後|ごご|p.m.
+半分|はんぶん|half
+二人|ふたり|two people
+一人|ひとり|one person
+お母さん|おかあさん|mother (polite)
+お父さん|おとうさん|father (polite)
+息子|むすこ|son
+娘|むすめ|daughter
+赤ちゃん|あかちゃん|baby
+若い|わかい|young
+友人|ゆうじん|friend (formal)
+先輩|せんぱい|senior
+後輩|こうはい|junior
+社長|しゃちょう|company president
+店員|てんいん|shop clerk
+お客さん|おきゃくさん|customer
+地下鉄|ちかてつ|subway
+道路|どうろ|road
+信号|しんごう|traffic light
+角|かど|corner
+橋|はし|bridge
+港|みなと|port
+島|しま|island
+森|もり|forest
+池|いけ|pond
+雲|くも|cloud
+風|かぜ|wind
+晴れ|はれ|clear weather
+曇り|くもり|cloudy
+台風|たいふう|typhoon
+地震|じしん|earthquake
+夏休み|なつやすみ|summer vacation
+冬休み|ふゆやすみ|winter vacation
+週末|しゅうまつ|weekend
+平日|へいじつ|weekday
+毎週|まいしゅう|every week
+毎月|まいつき|every month
+毎年|まいとし|every year
+すぐ|すぐ|immediately
+もうすぐ|もうすぐ|soon
+今度|こんど|next time
+ずっと|ずっと|all along
+初めて|はじめて|for the first time
+最近|さいきん|recently
+夕方|ゆうがた|evening
+食事|しょくじ|meal
+お菓子|おかし|sweets
+ケーキ|けーき|cake
+チョコレート|ちょこれーと|chocolate
+アイスクリーム|あいすくりーむ|ice cream
+りんご|りんご|apple
+バナナ|ばなな|banana
+いちご|いちご|strawberry
+トマト|とまと|tomato
+じゃがいも|じゃがいも|potato
+にんじん|にんじん|carrot
+味噌汁|みそしる|miso soup
+牛肉|ぎゅうにく|beef
+豚肉|ぶたにく|pork
+鶏肉|とりにく|chicken
+氷|こおり|ice
+お湯|おゆ|hot water
+汚い|きたない|dirty
+涼しい|すずしい|cool
+暖かい|あたたかい|warm
+簡単|かんたん|simple
+大切|たいせつ|important
+上|うえ|above
+下|した|below
+前|まえ|front
+後ろ|うしろ|behind
+右|みぎ|right
+左|ひだり|left
+隣|となり|next to
+近く|ちかく|nearby
+中|なか|inside
+外|そと|outside
+横|よこ|side
+場所|ばしょ|place
+物|もの|thing
+事|こと|matter
+もう一度|もういちど|once more
+書店|しょてん|bookstore
+郵便|ゆうびん|mail
+封筒|ふうとう|envelope
+葉書|はがき|postcard
+荷物|にもつ|luggage
+地図|ちず|map
+近所|きんじょ|neighborhood
+村|むら|village
+漢字|かんじ|kanji
+平仮名|ひらがな|hiragana
+片仮名|かたかな|katakana
+文字|もじ|letters, characters
+試合|しあい|game, match
+頭|あたま|head
+顔|かお|face
+髪|かみ|hair
+首|くび|neck
+お腹|おなか|stomach
+鼻|はな|nose
+歯|は|tooth
+指|ゆび|finger
+熱|ねつ|fever
+風邪|かぜ|cold (illness)
+月曜日|げつようび|Monday
+火曜日|かようび|Tuesday
+水曜日|すいようび|Wednesday
+木曜日|もくようび|Thursday
+金曜日|きんようび|Friday
+土曜日|どようび|Saturday
+日曜日|にちようび|Sunday
+値段|ねだん|price
+デパート|でぱーと|department store
+スーパー|すーぱー|supermarket
+幼稚園|ようちえん|kindergarten
+小学校|しょうがっこう|elementary school
+中学校|ちゅうがっこう|junior high school
+高校|こうこう|high school
+留学|りゅうがく|study abroad
+押す|おす|to push
+引く|ひく|to pull
+切る|きる|to cut
+送る|おくる|to send
+掛ける|かける|to hang, make a call
+座る|すわる|to sit
+立つ|たつ|to stand
+呼ぶ|よぶ|to call
+踊る|おどる|to dance
+冷たい|つめたい|cold (to touch)
+眠い|ねむい|sleepy
+同じ|おなじ|same
+色々|いろいろ|various
+全然|ぜんぜん|not at all
+大体|だいたい|roughly
+必ず|かならず|certainly
+特に|とくに|especially
+最初|さいしょ|first
+最後|さいご|last
+一番|いちばん|most
+昨夜|ゆうべ|last night
+来月|らいげつ|next month
+先月|せんげつ|last month
+今月|こんげつ|this month
+百|ひゃく|hundred
+千|せん|thousand
+万|まん|ten thousand
+億|おく|hundred million
+歌|うた|song
+漫画|まんが|comic
+消しゴム|けしごむ|eraser
+はさみ|はさみ|scissors
+定規|じょうぎ|ruler
+目|め|eye
+耳|みみ|ear
+口|くち|mouth
+足|あし|foot, leg
+体|からだ|body
+薬局|やっきょく|pharmacy
+星|ほし|star
+月|つき|moon
+太陽|たいよう|sun
+地球|ちきゅう|earth
+都市|とし|city
+中国|ちゅうごく|China
+韓国|かんこく|Korea
+アメリカ|あめりか|America
+イギリス|いぎりす|England
+フランス|ふらんす|France
+ドイツ|どいつ|Germany
+インド|いんど|India
+ベトナム|べとなむ|Vietnam
+タイ|たい|Thailand
+ロシア|ろしあ|Russia
+カナダ|かなだ|Canada
+オーストラリア|おーすとらりあ|Australia
+日本人|にほんじん|Japanese person
+名字|みょうじ|family name
+男の子|おとこのこ|boy
+女の子|おんなのこ|girl
+大人|おとな|adult
+子ども|こども|children
+赤ん坊|あかんぼう|baby
+叔父|おじ|uncle
+叔母|おば|aunt
+家内|かない|my wife
+夫|おっと|husband
+妻|つま|wife
+恋人|こいびと|lover
+時|じ|o'clock
+分|ふん|minute
+秒|びょう|second
+数|かず|number
+数字|すうじ|digit
+廊下|ろうか|hallway
+壁|かべ|wall
+床|ゆか|floor
+天井|てんじょう|ceiling
+塀|へい|fence
+屋根|やね|roof
+庭木|にわき|garden tree
+テーブル|てーぶる|table
+洗濯機|せんたくき|washing machine
+掃除機|そうじき|vacuum cleaner
+鏡|かがみ|mirror
+ボタン|ぼたん|button
+ごみ|ごみ|garbage
+紙袋|かみぶくろ|paper bag
+お箸|おはし|chopsticks
+お皿|おさら|dish
+茶碗|ちゃわん|rice bowl
+ご馳走|ごちそう|feast
+おかず|おかず|side dish
+卵焼き|たまごやき|rolled omelet
+パスタ|ぱすた|pasta
+ピザ|ぴざ|pizza
+サンドイッチ|さんどいっち|sandwich
+ハンバーガー|はんばーがー|hamburger
+ジャム|じゃむ|jam
+バター|ばたー|butter
+チーズ|ちーず|cheese
+ミルク|みるく|milk
+お水|おみず|water (polite)
+氷水|こおりみず|iced water
+紅茶|こうちゃ|black tea
+緑茶|りょくちゃ|green tea
+ワイン|わいん|wine
+はっきり|はっきり|clearly
+ちゃんと|ちゃんと|properly
+やっと|やっと|finally
+もちろん|もちろん|of course
+たいてい|たいてい|usually
+いちばん|いちばん|the most
+ずいぶん|ずいぶん|quite, very
+なるべく|なるべく|as much as possible
+そろそろ|そろそろ|soon, about time
+まっすぐ|まっすぐ|straight
+ぴったり|ぴったり|exactly, snugly
+だんだん|だんだん|gradually
+ほとんど|ほとんど|almost
+すぐに|すぐに|right away
+本当に|ほんとうに|really
+少々|しょうしょう|a little
+一つ|ひとつ|one thing
+二つ|ふたつ|two things
+三つ|みっつ|three things
+一枚|いちまい|one sheet
+一本|いっぽん|one long object
+一冊|いっさつ|one book
+一匹|いっぴき|one small animal
+一台|いちだい|one vehicle
+一杯|いっぱい|one cup
+一回|いっかい|one time
+二回|にかい|two times
+二階|にかい|second floor
+一階|いっかい|ground floor
+地下|ちか|basement
+何人|なんにん|how many people
+何階|なんがい|which floor
+何番|なんばん|which number
+何歳|なんさい|how old
+何本|なんぼん|how many long objects
+何時間|なんじかん|how many hours
+何曜日|なんようび|which weekday
+今朝|けさ|this morning
+今晩|こんばん|this evening
+明朝|みょうちょう|tomorrow morning
+毎回|まいかい|every time
+時々|ときどき|sometimes
+あまり|あまり|not very
+ぜひ|ぜひ|by all means
+一緒|いっしょ|together
+いくつ|いくつ|how many
+いかが|いかが|how
+どちら|どちら|which
+どれ|どれ|which one
+どの|どの|which
+この|この|this
+その|その|that
+あの|あの|that over there
+こちら|こちら|this way
+そちら|そちら|that way
+あちら|あちら|that way over there
+こんな|こんな|like this
+そんな|そんな|like that
+あんな|あんな|like that over there
+ほう|ほう|direction, side
+うち|うち|house, home
+もの|もの|thing
+ひと|ひと|person
+かた|かた|person (polite)
+ところ|ところ|place
+ばん|ばん|number, turn
+いま|いま|now
+あした|あした|tomorrow
+きのう|きのう|yesterday
+おととし|おととし|year before last
+さらいねん|さらいねん|year after next
+すべて|すべて|all
+ほか|ほか|other
+それぞれ|それぞれ|each
+ふたり|ふたり|two people
+みんな|みんな|everyone
+だれも|だれも|nobody
+なにも|なにも|nothing
+どこか|どこか|somewhere
+なにか|なにか|something
+だれか|だれか|someone
+いつか|いつか|someday
+おはようございます|おはようございます|good morning (polite)
+いってらっしゃい|いってらっしゃい|see you off (go and come back)
+いただきました|いただきました|thanks for the food (past)
+はじめまして|はじめまして|nice to meet you
+よろしく|よろしく|please treat me well
+おめでとう|おめでとう|congratulations
+ごめんなさい|ごめんなさい|I'm sorry
+だいじょうぶ|だいじょうぶ|it's okay
+どういたしまして|どういたしまして|you're welcome
+失礼します|しつれいします|excuse me (leaving)
+お願いします|おねがいします|please (request)
+いらっしゃいませ|いらっしゃいませ|welcome (to a shop)
+お会計|おかいけい|bill, check
+お土産|おみやげ|souvenir
+切符売り場|きっぷうりば|ticket counter
+出口|でぐち|exit
+入口|いりぐち|entrance
+席|せき|seat
+向こう|むこう|over there, across
+真ん中|まんなか|middle
+横断歩道|おうだんほどう|crosswalk
+交差点|こうさてん|intersection
+電子|でんし|electronic
+パソコン|ぱそこん|personal computer
+携帯|けいたい|mobile phone
+写メ|しゃめ|photo (casual)
+メール|めーる|email
+インターネット|いんたーねっと|internet
+番組|ばんぐみ|TV program
+ニュース|にゅーす|news
+ドラマ|どらま|drama
+スポーツ|すぽーつ|sports
+テニス|てにす|tennis
+ゲーム|げーむ|game
+プール|ぷーる|swimming pool
+海岸|かいがん|beach
+山登り|やまのぼり|mountain climbing
+ハイキング|はいきんぐ|hiking
+キャンプ|きゃんぷ|camping
+運転|うんてん|driving
+ポスト|ぽすと|mailbox
+宅配|たくはい|home delivery
+お茶碗|おちゃわん|rice bowl
+会社員|かいしゃいん|office worker
+看護師|かんごし|nurse
+警察官|けいさつかん|police officer
+運転手|うんてんしゅ|driver
+主婦|しゅふ|housewife
+公務員|こうむいん|civil servant
+弁護士|べんごし|lawyer
+歌手|かしゅ|singer
+画家|がか|painter
+作家|さっか|writer
+料理人|りょうりにん|cook, chef
+研究|けんきゅう|research
+説明|せつめい|explanation
+準備|じゅんび|preparation
+料金|りょうきん|fee
+お釣り|おつり|change (money)
+割引|わりびき|discount
+安売り|やすうり|sale
+お店|おみせ|shop
+食堂|しょくどう|cafeteria
+喫茶店|きっさてん|coffee shop
+居酒屋|いざかや|izakaya
+屋台|やたい|food stall
+市場|いちば|market
+八百屋|やおや|greengrocer
+魚屋|さかなや|fish shop
+肉屋|にくや|butcher
+本屋|ほんや|bookstore
+花屋|はなや|flower shop
+パン屋|ぱんや|bakery
+床屋|とこや|barber
+美容院|びよういん|hair salon
+役所|やくしょ|government office
+裁判所|さいばんしょ|court
+工場|こうじょう|factory
+会館|かいかん|hall
+映画館|えいがかん|movie theater
+美術館|びじゅつかん|art museum
+博物館|はくぶつかん|museum
+遊園地|ゆうえんち|amusement park
+動物園|どうぶつえん|zoo
+植物園|しょくぶつえん|botanical garden
+林|はやし|grove
+野原|のはら|field, plain
+通り|とおり|street
+消防署|しょうぼうしょ|fire station
+トンネル|とんねる|tunnel
+踏切|ふみきり|railroad crossing
+駐車場|ちゅうしゃじょう|parking lot
+駐輪場|ちゅうりんじょう|bicycle parking
+待合室|まちあいしつ|waiting room
+改札|かいさつ|ticket gate
+乗り場|のりば|boarding place
+特急|とっきゅう|limited express
+新幹線|しんかんせん|bullet train
+急行|きゅうこう|express train
+各駅停車|かくえきていしゃ|local train
+船|ふね|ship
+自動車|じどうしゃ|automobile
+バイク|ばいく|motorcycle
+オートバイ|おーとばい|motorbike
+歩道|ほどう|sidewalk
+車道|しゃどう|roadway
+坂|さか|slope
+エスカレーター|えすかれーたー|escalator
+教会|きょうかい|church
+寺|てら|temple
+花見|はなみ|cherry blossom viewing
+お祝い|おいわい|celebration
+葬式|そうしき|funeral
+結婚式|けっこんしき|wedding ceremony
+入学式|にゅうがくしき|entrance ceremony
+卒業式|そつぎょうしき|graduation ceremony
+入院|にゅういん|hospitalization
+退院|たいいん|discharge from hospital
+怪我|けが|injury
+頭痛|ずつう|headache
+腹痛|ふくつう|stomachache
+歯医者|はいしゃ|dentist
+眼鏡屋|めがねや|optician
+薬屋|くすりや|pharmacy
+生活|せいかつ|life, living
+親戚|しんせき|relative
+仲間|なかま|companion
+隣人|りんじん|neighbor
+相手|あいて|partner, opponent
+客|きゃく|customer
+店長|てんちょう|store manager
+社員|しゃいん|employee
+同僚|どうりょう|colleague
+部長|ぶちょう|department head
+課長|かちょう|section chief
+係長|かかりちょう|team leader
+給料|きゅうりょう|salary
+休日|きゅうじつ|holiday
+祝日|しゅくじつ|public holiday
+年末|ねんまつ|end of the year
+年始|ねんし|beginning of the year
+季節|きせつ|season
+気温|きおん|temperature
+湿気|しっけ|humidity
+大雨|おおあめ|heavy rain
+大雪|おおゆき|heavy snow
+晴天|せいてん|clear sky
+快晴|かいせい|fine weather
+蒸し暑い|むしあつい|humid and hot
+寒気|かんき|chill
+暑さ|あつさ|heat
+寒さ|さむさ|cold
+明るさ|あかるさ|brightness
+優しい|やさしい|kind, gentle
+厳しい|きびしい|strict
+賢い|かしこい|smart
+可愛い|かわいい|cute
+格好いい|かっこいい|cool, stylish
+静かな|しずかな|quiet
+元気な|げんきな|energetic
+好きな|すきな|favorite
+嫌いな|きらいな|disliked
+上手な|じょうずな|skilled
+下手な|へたな|unskilled
+大切な|たいせつな|important
+必要な|ひつような|necessary
+簡単な|かんたんな|simple
+複雑な|ふくざつな|complicated
+便利な|べんりな|convenient
+有名な|ゆうめいな|famous
+親切な|しんせつな|kind
+丁寧な|ていねいな|polite
+楽な|らくな|easy, comfortable
+暇な|ひまな|free, idle
+急ぐ|いそぐ|to hurry
+止まる|とまる|to stop (intransitive)
+止める|とめる|to stop (transitive)
+走り出す|はしりだす|to start running
+歩き出す|あるきだす|to start walking
+泣き出す|なきだす|to burst into tears
+笑い出す|わらいだす|to burst into laughter
+降る|ふる|to fall (rain, snow)
+晴れる|はれる|to clear up
+曇る|くもる|to get cloudy
+濡れる|ぬれる|to get wet
+乾く|かわく|to dry
+冷える|ひえる|to get cold
+温める|あたためる|to warm up
+冷やす|ひやす|to chill
+焼く|やく|to bake, grill
+煮る|にる|to boil, simmer
+炒める|いためる|to stir-fry
+混ぜる|まぜる|to mix
+入れる|いれる|to put in
+出す|だす|to take out
+読み物|よみもの|reading material
+書き方|かきかた|way of writing
+使い方|つかいかた|how to use
+読み方|よみかた|how to read
+作り方|つくりかた|how to make
+話し合う|はなしあう|to discuss
+見つける|みつける|to find
+忘れ物|わすれもの|lost item
+落とし物|おとしもの|lost property
+拾う|ひろう|to pick up
+捨てる|すてる|to throw away
+持ち帰る|もちかえる|to take home
+預ける|あずける|to leave in someone's care
+取り替える|とりかえる|to replace
+直す|なおす|to fix
+壊れる|こわれる|to break (intransitive)
+壊す|こわす|to break (transitive)
+貯める|ためる|to save (money)
+稼ぐ|かせぐ|to earn
+払う|はらう|to pay
+返事|へんじ|reply
+予定|よてい|plan
+計画|けいかく|plan, project
+相談|そうだん|consultation
+答える|こたえる|to answer
+説明する|せつめいする|to explain
+お休み|おやすみ|rest, holiday`),
+k:P(`一|イチ・ひと(つ)|one
+二|ニ・ふた(つ)|two
+三|サン・みっ(つ)|three
+四|シ・よん|four
+五|ゴ・いつ(つ)|five
+六|ロク・むっ(つ)|six
+七|シチ・なな|seven
+八|ハチ・やっ(つ)|eight
+九|キュウ・ここの(つ)|nine
+十|ジュウ・とお|ten
+百|ヒャク|hundred
+千|セン|thousand
+万|マン|ten thousand
+円|エン|yen, circle
+年|ネン・とし|year
+日|ニチ・ひ|sun, day
+月|ゲツ・つき|moon, month
+火|カ・ひ|fire
+水|スイ・みず|water
+木|モク・き|tree
+金|キン・かね|gold, money
+土|ド・つち|earth
+曜|ヨウ|weekday
+上|ジョウ・うえ|above
+下|カ・した|below
+左|サ・ひだり|left
+右|ウ・みぎ|right
+中|チュウ・なか|middle, inside
+外|ガイ・そと|outside
+大|ダイ・おお(きい)|big
+小|ショウ・ちい(さい)|small
+山|サン・やま|mountain
+川|セン・かわ|river
+田|デン・た|rice field
+人|ジン・ひと|person
+口|コウ・くち|mouth
+目|モク・め|eye
+耳|ジ・みみ|ear
+手|シュ・て|hand
+足|ソク・あし|foot, leg
+学|ガク・まな(ぶ)|study
+校|コウ|school
+先|セン・さき|previous, ahead
+生|セイ・い(きる)|life, birth
+本|ホン・もと|book, origin
+車|シャ・くるま|car
+見|ケン・み(る)|see
+行|コウ・い(く)|go
+来|ライ・く(る)|come
+食|ショク・た(べる)|eat
+飲|イン・の(む)|drink
+白|ハク・しろ(い)|white
+長|チョウ・なが(い)|long
+高|コウ・たか(い)|tall, expensive
+安|アン・やす(い)|cheap, safe
+父|フ・ちち|father
+母|ボ・はは|mother
+男|ダン・おとこ|man
+女|ジョ・おんな|woman
+子|シ・こ|child
+天|テン|heaven
+気|キ|spirit, air
+雨|ウ・あめ|rain
+花|カ・はな|flower
+時|ジ・とき|time
+間|カン・あいだ|interval
+今|コン・いま|now
+前|ゼン・まえ|before
+後|ゴ・あと|after
+名|メイ・な|name
+国|コク・くに|country
+語|ゴ|language
+話|ワ・はな(す)|talk
+読|ドク・よ(む)|read
+書|ショ・か(く)|write
+聞|ブン・き(く)|hear
+買|バイ・か(う)|buy
+休|キュウ・やす(む)|rest
+会|カイ・あ(う)|meet
+電|デン|electricity
+駅|エキ|station
+北|ホク・きた|north
+南|ナン・みなみ|south
+東|トウ・ひがし|east
+西|セイ・にし|west
+新|シン・あたら(しい)|new
+古|コ・ふる(い)|old
+友|ユウ・とも|friend
+何|カ・なに|what
+毎|マイ|every
+週|シュウ|week
+分|フン・わ(かる)|minute, understand
+半|ハン|half
+字|ジ・あざ|character
+文|ブン・ふみ|sentence
+出|シュツ・で(る)|exit
+入|ニュウ・はい(る)|enter
+言|ゲン・い(う)|say
+立|リツ・た(つ)|stand
+作|サク・つく(る)|make
+社|シャ|company
+店|テン・みせ|shop
+自|ジ・みずか(ら)|self
+転|テン・ころ(ぶ)|turn
+飛|ヒ・と(ぶ)|fly
+雪|セツ・ゆき|snow
+犬|ケン・いぬ|dog
+赤|セキ・あか(い)|red
+青|セイ・あお(い)|blue
+黒|コク・くろ(い)|black
+色|ショク・いろ|color
+早|ソウ・はや(い)|early, fast
+夕|セキ・ゆう|evening
+夜|ヤ・よ|night
+朝|チョウ・あさ|morning
+昼|チュウ・ひる|noon, daytime
+午|ゴ|noon
+町|チョウ・まち|town
+村|ソン・むら|village
+体|タイ・からだ|body
+正|セイ・ただ(しい)|correct
+私|シ・わたし|I
+多|タ・おお(い)|many
+少|ショウ・すく(ない)|few
+弱|ジャク・よわ(い)|weak
+強|キョウ・つよ(い)|strong
+明|メイ・あか(るい)|bright
+暗|アン・くら(い)|dark`),
+g:[...P(`〜は〜です|topic marker は|私は田中です。 I am Tanaka.
+〜が好きです|like / be fond of (が)|犬が好きです。 I like dogs.
+〜に行きます|go to (に = destination)|学校に行きます。 I go to school.
+〜で〜ます|at / by (で = place, means)|図書館で勉強します。 I study at the library.
+〜の〜|possessive の|私の本です。 It’s my book.
+〜も|also / too|私も学生です。 I’m a student too.
+〜から〜まで|from … to …|九時から五時まで働きます。 I work from 9 to 5.
+〜たいです|want to do|日本へ行きたいです。 I want to go to Japan.
+〜てください|please do…|ここに名前を書いてください。 Please write your name here.
+〜ています|ongoing action / state|今、本を読んでいます。 I’m reading a book now.
+〜ないでください|please don’t…|ここで写真を撮らないでください。 Please don’t take photos here.
+〜ました|past polite|昨日、映画を見ました。 I watched a movie yesterday.
+〜でしょう|probably|明日は雨でしょう。 It will probably rain tomorrow.
+〜が〜あります|exists (things)|机の上に本があります。 There is a book on the desk.
+〜ではありません|is not (polite)|学生ではありません。 I am not a student.
+〜ませんでした|did not (polite past)|昨日は行きませんでした。 I didn't go yesterday.
+〜ましょう|let's do|一緒に行きましょう。 Let's go together.
+〜てもいいです|may / it's OK to|ここに座ってもいいです。 You may sit here.
+〜てはいけません|must not|ここで泳いではいけません。 You must not swim here.
+〜なければなりません|must do|早く起きなければなりません。 I must get up early.
+〜てから|after doing|ご飯を食べてから出かけます。 I go out after eating.
+〜前に|before doing|寝る前に本を読みます。 I read a book before sleeping.
+〜ながら|while doing|音楽を聞きながら勉強します。 I study while listening to music.
+Aより Bのほうが|B is more than A|りんごよりバナナのほうが好きです。 I like bananas more than apples.
+〜が上手です|good at|日本語が上手です。 I'm good at Japanese.
+〜が下手です|bad at|料理が下手です。 I'm bad at cooking.
+〜から|because|雨が降っていますから、行きません。 It's raining, so I won't go.
+〜ので|because (polite)|疲れたので、休みます。 I'm tired, so I'll rest.
+〜と思います|I think|明日は雨だと思います。 I think it'll rain tomorrow.
+〜かもしれません|might|明日は来ないかもしれません。 They might not come tomorrow.
+〜ことができます|can do|日本語で話すことができます。 I can speak Japanese.
+〜てみます|try doing|このケーキを食べてみます。 I'll try eating this cake.
+〜と〜|and (nouns)|りんごとバナナが好きです。 I like apples and bananas.
+〜が欲しいです|want (a thing)|新しいパソコンが欲しいです。 I want a new computer.`),["〜です","is / am / are (polite)","私は学生です。 I am a student."],["〜を〜ます","object + polite verb","水を飲みます。 I drink water."],["〜ませんか","invitation: won’t you…?","一緒に行きませんか。 Shall we go together?"]],
+q:[["「ともだち」の漢字は?",["友達","大達","友連","支達"],0],["私は毎日パン___食べます。",["を","に","で","が"],0],["「water」は日本語で?",["火","水","木","土"],1],["「がっこう」=?",["school","hospital","station","shop"],0],
+["「いぬ」の意味は?",["cat","dog","bird","fish"],1],
+["「あした」の意味は?",["yesterday","today","tomorrow","week"],2],
+["水___飲みます。",["を","に","で","と"],0],
+["学校___行きます。",["に","を","が","は"],0],
+["日本語___話します。",["を","が","に","で"],0],
+["「はい」の意味は?",["no","yes","thanks","sorry"],1],
+["「おはよう」はいつ使いますか?",["evening","morning","night","lunch"],1],
+["「たかい」の漢字は?",["高い","安い","大い","多い"],0],
+["「いそがしい」の意味は?",["busy","easy","fun","hot"],0],
+["昨日、映画を___。(watched, polite)",["見ます","見ました","見ません","見たい"],1],
+["寝る___に本を読みます。",["まえ","あと","なか","うえ"],0],
+["「ひゃく」は何ですか?",["10","100","1000","10000"],1],
+["「わたし」は誰ですか?",["you","I","he","she"],1],
+["「たべる」の意味は?",["to drink","to eat","to sleep","to read"],1],
+["「みぎ」の意味は?",["left","right","up","down"],1],
+["「やま」の意味は?",["river","mountain","sea","sky"],1],
+["「うみ」の意味は?",["sea","sky","field","forest"],0],
+["「ひこうき」の意味は?",["train","bus","airplane","taxi"],2],
+["「たべもの」の意味は?",["drink","food","clothes","house"],1],
+["「のみもの」の意味は?",["drink","food","paper","room"],0],
+["「きのう」の意味は?",["today","yesterday","tomorrow","now"],1],
+["わたしは毎朝コーヒー___飲みます。",["を","に","で","が"],0],
+["東京___住んでいます。",["に","を","へ","の"],0],
+["駅___行きます。",["へ","を","が","は"],0],
+["この本は私___です。",["の","を","に","と"],0],
+["友達___映画を見ました。",["と","を","に","で"],0],
+["図書館___勉強します。",["で","に","を","が"],0],
+["これ___いくらですか。",["は","を","に","で"],0],
+["「ねこ」の意味は?",["cat","dog","bird","rabbit"],0],
+["「ほん」の意味は?",["book","bread","paper","desk"],0],
+["「くるま」の意味は?",["car","bus","bicycle","train"],0],
+["「ちいさい」の意味は?",["big","small","long","short"],1],
+["「あかい」の意味は?",["red","white","blue","black"],0],
+["「おいしい」の意味は?",["delicious","boring","difficult","cheap"],0],
+["「むずかしい」の意味は?",["easy","difficult","fast","early"],1],
+["毎朝6時に___。",["起きます","寝ます","行きます","来ます"],0],
+["昨日、学校___行きませんでした。",["に","を","が","と"],0],
+["「いただきます」はいつ言いますか?",["before a meal","after sleeping","at the station","when leaving"],0],
+["「ありがとうございます」は何ですか?",["hello","goodbye","thank you","sorry"],2],
+["「おやすみなさい」はいつ使いますか?",["at night before sleeping","in the morning","at lunch","at school"],0],
+["「さようなら」の意味は?",["hello","goodbye","thank you","please"],1],
+["「いま」の意味は?",["now","later","before","after"],0],
+["日本___来ました。",["へ","を","が","で"],0],
+["「せんせい」の意味は?",["student","teacher","doctor","driver"],1],
+["「いしゃ」の意味は?",["doctor","teacher","driver","cook"],0],
+["「なまえ」の意味は?",["age","name","address","number"],1],
+["「いくつ」の意味は?",["how many","how much","where","when"],0],
+["「どこ」の意味は?",["who","what","where","why"],2],
+["「だれ」の意味は?",["who","where","when","how"],0],
+["「なんじ」の意味は?",["what time","what day","what year","what color"],0],
+["「ふゆ」の意味は?",["spring","summer","autumn","winter"],3],
+["「なつ」の意味は?",["summer","winter","spring","autumn"],0],
+["「くつ」の意味は?",["hat","shoes","bag","shirt"],1],
+["「かさ」の意味は?",["umbrella","bag","key","wallet"],0],
+["「おかね」の意味は?",["money","medicine","clock","ticket"],0]]},
+N4:{v:[["経験","けいけん","experience"],["準備","じゅんび","preparation"],["約束","やくそく","promise"],["興味","きょうみ","interest"],["相談","そうだん","consultation"],["忘れる","わすれる","to forget"]],
+k:[["意","イ","meaning, mind"],["習","シュウ","learn"],["者","シャ","person"],["究","キュウ","research"]],
+g:[["〜ために","in order to / for","日本へ行くために貯金する。 I save to go to Japan."],["〜そうです","looks like","雨が降りそうです。 It looks like rain."],["〜ても","even if","高くても買います。 I’ll buy it even if it’s expensive."]],
+q:[["「じゅんび」の意味は?",["preparation","promise","interest","memory"],0],["雨が降り___です。",["そう","よう","らしい","みたい"],0],["日本語を勉強する___、本を買った。",["ために","ながら","けど","から"],0],["「やくそく」=?",["promise","trouble","reason","rule"],0]]},
+N3:{v:[["影響","えいきょう","influence"],["関係","かんけい","relationship"],["環境","かんきょう","environment"],["普通","ふつう","ordinary"],["増える","ふえる","to increase"],["決める","きめる","to decide"]],
+k:[["政","セイ","politics"],["変","ヘン","change"],["技","ギ","skill"],["険","ケン","steep, danger"]],
+g:[["〜ばかり","only / just / nothing but","彼は遊んでばかりいる。 He does nothing but play."],["〜わけではない","it doesn’t mean that…","嫌いなわけではない。 It’s not that I dislike it."],["〜ことになる","it is decided / turns out","来月転勤することになった。 It’s been decided I’ll transfer."]],
+q:[["「かんきょう」の漢字は?",["環境","関係","観光","官境"],0],["彼はゲーム___している。",["ばかり","だけに","ほど","しか"],0],["「ふえる」の意味は?",["increase","decrease","stop","begin"],0],["結婚する___になった。",["こと","もの","ため","はず"],0]]},
+N2:{v:[["維持","いじ","maintain"],["趣旨","しゅし","purpose, gist"],["傾向","けいこう","tendency"],["把握","はあく","grasp, understand"],["貢献","こうけん","contribution"],["妥協","だきょう","compromise"]],
+k:[["概","ガイ","outline"],["衝","ショウ","collide"],["把","ハ","grasp"],["搾","サク","squeeze"]],
+g:[["〜に違いない","must be / surely","彼が犯人に違いない。 He must be the culprit."],["〜をはじめ","starting with / including","社長をはじめ、全員が参加した。 Everyone, the president included, joined."],["〜ざるを得ない","have no choice but to","中止せざるを得ない。 We have no choice but to cancel."]],
+q:[["「たいけい」でなく「けいこう」の意味は?",["tendency","system","effect","region"],0],["状況を___する。(grasp)",["把握","維持","妥協","貢献"],0],["計画を中止___を得ない。",["せざる","しない","する","して"],0],["彼は失敗した。努力が足りなかった___。",["に違いない","わけがない","ものか","つもり"],0]]}
+};
+D.N4.v.push(...P(`出発|しゅっぱつ|departure
+到着|とうちゃく|arrival
+予定|よてい|plan
+注意|ちゅうい|caution
+紹介|しょうかい|introduction
+説明|せつめい|explanation
+案内|あんない|guidance
+連絡|れんらく|contact
+理由|りゆう|reason
+場合|ばあい|case
+ほとんど|ほとんど|almost all
+きっかけ|きっかけ|trigger
+十分|じゅうぶん|enough
+便利|べんり|convenient
+複雑|ふくざつ|complicated
+安全|あんぜん|safety
+危険|きけん|danger
+丁寧|ていねい|polite, careful
+失敗|しっぱい|failure
+成功|せいこう|success
+努力|どりょく|effort
+得意|とくい|good at
+苦手|にがて|weak at
+大人|おとな|adult
+広告|こうこく|advertisement
+お知らせ|おしらせ|notice
+冷静|れいせい|calm
+残念|ざんねん|regrettable
+心配|しんぱい|worry
+安心|あんしん|relief
+感謝|かんしゃ|gratitude
+予約|よやく|reservation
+申し込み|もうしこみ|application
+届ける|とどける|to deliver
+運ぶ|はこぶ|to carry
+探す|さがす|to search
+迎える|むかえる|to welcome
+集める|あつめる|to collect
+返す|かえす|to return (item)
+変える|かえる|to change
+続ける|つづける|to continue
+比べる|くらべる|to compare
+調べる|しらべる|to investigate
+伝える|つたえる|to convey
+許す|ゆるす|to forgive, permit
+減る|へる|to decrease
+起こる|おこる|to occur
+落ちる|おちる|to fall
+頼る|たよる|to depend on
+通る|とおる|to pass through
+あきらめる|あきらめる|to give up
+恥ずかしい|はずかしい|embarrassed`));
+D.N4.k.push(...P(`力|リョク・ちから|power
+反|ハン・そらす|opposite
+始|シ・はじ(める)|begin
+終|シュウ・お(わる)|end
+開|カイ・ひら(く)|open
+閉|ヘイ・と(じる)|close
+進|シン・すす(む)|advance
+待|タイ・ま(つ)|wait
+返|ヘン・かえ(す)|return
+運|ウン・はこ(ぶ)|carry, luck
+集|シュウ・あつ(める)|gather
+使|シ・つか(う)|use
+借|シャク・か(りる)|borrow
+貸|タイ・か(す)|lend
+遅|チ・おそ(い)|late
+速|ソク・はや(い)|fast
+近|キン・ちか(い)|near
+遠|エン・とお(い)|far
+太|タイ・ふと(い)|thick
+細|サイ・ほそ(い)|thin
+重|ジュウ・おも(い)|heavy
+軽|ケイ・かる(い)|light
+暖|ダン・あたた(かい)|warm
+寒|カン・さむ(い)|cold
+明|メイ・あか(るい)|bright
+暗|アン・くら(い)|dark
+悪|アク・わる(い)|bad
+味|ミ・あじ|taste
+思|シ・おも(う)|think`));
+D.N4.g.push(...P(`〜ようになる|come to be able to|日本語が話せるようになりました。 I became able to speak Japanese.
+〜ようにする|make an effort to|毎日運動するようにしています。 I make an effort to exercise daily.
+〜らしい|seems like|明日は雨らしいです。 It seems it will rain tomorrow.
+〜みたい|seems like (casual)|まるで夢みたいです。 It's like a dream.
+〜たことがある|have experience of|京都へ行ったことがあります。 I have been to Kyoto.
+〜てしまう|do completely / regret|宿題を忘れてしまいました。 I forgot my homework (regret).
+〜ておく|do in advance|切符を買っておきます。 I'll buy the ticket in advance.
+〜ところ|about to / just now|今、出かけるところです。 I'm just about to go out.
+〜ずに|without doing|朝ご飯を食べずに出かけました。 I left without eating breakfast.
+〜つもり|intend to|来年、留学するつもりです。 I intend to study abroad next year.
+〜はずです|should be|彼は来るはずです。 He should come.
+〜ほうがいい|had better|薬を飲んだほうがいいです。 You had better take medicine.
+〜かどうか|whether|行くかどうか迷っています。 I'm wondering whether to go.
+〜たら|if / when|雨が降ったら、家にいます。 If it rains, I'll stay home.`));
+D.N4.q.push(["「ていねい」の意味は?",["polite, careful","dangerous","calm","bitter"],0],["「あんぜん」の意味は?",["danger","safety","success","failure"],1],["「せいこう」の意味は?",["success","failure","effort","worry"],0],["「あきらめる」の意味は?",["to continue","to give up","to compare","to carry"],1],["「さがす」の意味は?",["to welcome","to search","to collect","to return"],1],["「つたえる」の意味は?",["to convey","to change","to fall","to deliver"],0],["日本語が話せる___になりました。",["ように","ために","ことに","ばかりに"],0],["毎日運動する___しています。",["ようにして","ために","らしい","みたい"],0],["明日は雨___です。(seems)",["ために","らしい","ように","ばかり"],1],["京都へ行った___があります。",["ことが","ものが","ところが","はずが"],0],["今、出かける___です。(just about to)",["ところ","はず","つもり","ばかり"],0],["朝ご飯を食べ___出かけました。(without)",["ずに","なくて","ないで","ながら"],0],["来年、留学する___です。(intend)",["ため","はず","つもり","ところ"],2],["彼は来る___です。(should)",["はず","つもり","ところ","らしい"],0],["「ほうがいい」の意味は?",["must not","had better","cannot","want to"],1],["行く___迷っています。(whether)",["ために","らしい","ように","かどうか"],3],["「ざんねん」の意味は?",["regrettable","delicious","clean","early"],0],["「ほとんど」の意味は?",["never","almost all","always","suddenly"],1],["「にがて」の意味は?",["good at","weak at","able to","want to"],1],["「おしらせ」の意味は?",["question","answer","notice","reason"],2]);
+D.N3.v.push(...P(`提案|ていあん|proposal
+能力|のうりょく|ability
+資料|しりょう|document, material
+経済|けいざい|economy
+社会|しゃかい|society
+制度|せいど|system
+責任|せきにん|responsibility
+効果|こうか|effect
+予想|よそう|expectation
+原因|げんいん|cause
+結果|けっか|result
+方法|ほうほう|method
+手続き|てつづき|procedure`));
+D.N3.g.push(...P(`〜に対して|toward / in contrast to|先生に対して質問しました。 I asked the teacher a question.
+〜によって|by means of / depending on|経験によって違います。 It differs depending on experience.
+〜にしたがって|as / in accordance with|時間にしたがって変わります。 It changes as time passes.
+〜ようとする|try to|ドアを開けようとしました。 I tried to open the door.`));
+D.N3.q.push(["「けいざい」の意味は?",["education","nature","economy","sport"],2],["「せきにん」の意味は?",["responsibility","reason","result","method"],0],["「ていあん」の意味は?",["plan","proposal","question","report"],1],["「ほうほう」の意味は?",["meaning","method","cost","value"],1],["「けっか」の意味は?",["cause","result","effect","start"],1]);
+D.N2.v.push(...P(`概念|がいねん|concept
+妥当|だとう|appropriate
+懸念|けねん|concern
+顕著|けんちょ|remarkable
+促進|そくしん|promotion
+抑制|よくせい|suppression
+展開|てんかい|development
+推進|すいしん|promotion
+閲覧|えつらん|browsing
+方針|ほうしん|policy`));
+D.N2.g.push(...P(`〜をめぐって|regarding / over|予算をめぐって議論が続いている。 Debate continues over the budget.
+〜ならでは|only possible with|この店ならではの味です。 It's a flavor only this shop can offer.
+〜にもかかわらず|despite|雨にもかかわらず、大会は行われた。 Despite the rain, the event was held.`));
+D.N2.q.push(["「がいねん」の意味は?",["concept","concern","result","method"],0],["「だとう」の意味は?",["remarkable","appropriate","suppression","browsing"],1],["雨___、大会は行われた。(despite)",["にもかかわらず","をめぐって","ならでは","ことに"],0],["「けねん」の意味は?",["concern","concept","policy","promotion"],0]);
+D.N5.q.push(["「いぬ」の意味は?", ["cat", "dog", "bird", "fish"], 1],["「ねこ」の意味は?", ["dog", "cat", "horse", "cow"], 1],["「うま」の意味は?", ["cow", "pig", "horse", "sheep"], 2],["「うし」の意味は?", ["cow", "goat", "deer", "bear"], 0],["「とり」の意味は?", ["fish", "bird", "egg", "insect"], 1],["「さかな」の意味は?", ["meat", "fish", "vegetable", "rice"], 1],["「やさい」の意味は?", ["fruit", "vegetable", "bread", "sugar"], 1],["「くだもの」の意味は?", ["fruit", "meal", "tea", "milk"], 0],["「たまご」の意味は?", ["egg", "milk", "butter", "cheese"], 0],["「ぎゅうにゅう」の意味は?", ["juice", "beer", "milk", "water"], 2],["「さとう」の意味は?", ["salt", "sugar", "soy sauce", "vinegar"], 1],["「しお」の意味は?", ["salt", "sugar", "pepper", "oil"], 0],["「あさごはん」の意味は?", ["lunch", "breakfast", "dinner", "snack"], 1],["「ひるごはん」の意味は?", ["breakfast", "dinner", "lunch", "tea"], 2],["「ばんごはん」の意味は?", ["dinner", "lunch", "breakfast", "snack"], 0],["「しごと」の意味は?", ["work", "school", "home", "hobby"], 0],["「やすみ」の意味は?", ["work", "holiday", "trip", "party"], 1],["「かいしゃ」の意味は?", ["school", "company", "hospital", "bank"], 1],["「びょういん」の意味は?", ["hospital", "station", "park", "library"], 0],["「ぎんこう」の意味は?", ["bank", "shop", "hotel", "post office"], 0],["「としょかん」の意味は?", ["museum", "library", "park", "school"], 1],["「ゆうびんきょく」の意味は?", ["post office", "police", "airport", "bank"], 0],["「えいが」の意味は?", ["music", "movie", "photo", "drama"], 1],["「おんがく」の意味は?", ["music", "movie", "news", "game"], 0],["「しんぶん」の意味は?", ["magazine", "letter", "newspaper", "book"], 2],["「でんわ」の意味は?", ["television", "telephone", "radio", "computer"], 1],["「てんき」の意味は?", ["weather", "season", "time", "color"], 0],["「あめ」の意味は?", ["snow", "rain", "wind", "cloud"], 1],["「ゆき」の意味は?", ["snow", "rain", "fog", "ice"], 0],["「はな」の意味は?", ["tree", "flower", "leaf", "grass"], 1],["「き」の意味は?", ["tree", "forest", "wood", "flower"], 0],["「がくせい」の意味は?", ["teacher", "doctor", "student", "driver"], 2],["「かぞく」の意味は?", ["family", "friend", "neighbor", "guest"], 0],["「ちち」の意味は?", ["mother", "father", "brother", "uncle"], 1],["「はは」の意味は?", ["father", "mother", "sister", "aunt"], 1],["「あに」の意味は?", ["older brother", "younger brother", "older sister", "cousin"], 0],["「いもうと」の意味は?", ["older sister", "younger sister", "younger brother", "niece"], 1],["「おんな」の意味は?", ["man", "woman", "child", "baby"], 1],["「とし」の意味は?", ["age", "year", "time", "day"], 0],["「おおきい」の意味は?", ["big", "small", "long", "short"], 0],["「ながい」の意味は?", ["long", "short", "tall", "wide"], 0],["「みじかい」の意味は?", ["long", "short", "low", "heavy"], 1],["「ひくい」の意味は?", ["high", "low", "near", "far"], 1],["「やすい」の意味は?", ["expensive", "cheap", "easy", "new"], 1],["「あたらしい」の意味は?", ["old", "new", "big", "good"], 1],["「ふるい」の意味は?", ["new", "old", "young", "long"], 1],["「あつい」の意味は?", ["cold", "hot", "warm", "sweet"], 1],["「さむい」の意味は?", ["cold", "hot", "cool", "wet"], 0],["「おもしろい」の意味は?", ["boring", "interesting", "difficult", "quiet"], 1],["「たのしい」の意味は?", ["fun", "sad", "busy", "tired"], 0],["「しずか」の意味は?", ["noisy", "quiet", "clean", "dirty"], 1],["「きれい」の意味は?", ["dirty", "pretty / clean", "strange", "tasty"], 1],["「はやい」の意味は?", ["slow", "fast / early", "late", "hot"], 1],["「おそい」の意味は?", ["slow / late", "fast", "early", "hard"], 0],["「きょう」の意味は?", ["today", "tomorrow", "yesterday", "last year"], 0],["「ことし」の意味は?", ["this year", "next year", "last year", "morning"], 0],["「まいにち」の意味は?", ["every day", "every week", "every year", "sometimes"], 0],["「あさ」の意味は?", ["morning", "noon", "night", "evening"], 0],["「よる」の意味は?", ["morning", "noon", "night", "dawn"], 2],["「あき」の意味は?", ["spring", "summer", "autumn", "winter"], 2],["「かく」の意味は?", ["to read", "to write", "to see", "to hear"], 1],["「よむ」の意味は?", ["to read", "to write", "to speak", "to listen"], 0],["「はなす」の意味は?", ["to speak", "to read", "to meet", "to wait"], 0],["「まつ」の意味は?", ["to wait", "to stop", "to run", "to walk"], 0],["「かえる」の意味は?", ["to return home", "to enter", "to go out", "to sleep"], 0],["「やすむ」の意味は?", ["to rest", "to work", "to swim", "to sing"], 0],["「あそぶ」の意味は?", ["to play", "to study", "to cook", "to clean"], 0],["「ならう」の意味は?", ["to teach", "to learn", "to borrow", "to lend"], 1],["「おしえる」の意味は?", ["to teach", "to learn", "to answer", "to ask"], 0],["「つくる」の意味は?", ["to make", "to buy", "to sell", "to take"], 0],["「うる」の意味は?", ["to sell", "to buy", "to lend", "to receive"], 0],["「あける」の意味は?", ["to close", "to open", "to wash", "to wake"], 1],["「しめる」の意味は?", ["to close", "to open", "to turn on", "to bring"], 0],["「ねる」の意味は?", ["to sleep", "to wake", "to rest", "to walk"], 0],["わたし___がくせいです。", ["は", "が", "を", "に"], 0],["りんご___すきです。", ["が", "は", "を", "に"], 0],["いえ___かえります。", ["を", "へ", "が", "は"], 1],["「こんにちは」はいつ言いますか?", ["morning", "daytime", "night", "bedtime"], 1],["「いってきます」はいつ言いますか?", ["when leaving home", "when returning home", "at dinner", "when sleeping"], 0],["「ただいま」はいつ言いますか?", ["when leaving home", "when returning home", "when eating", "when meeting"], 1]);
+const L=["N5"],T=[["v","Vocab"],["k","Kanji"],["w","Write"],["s","Speak"],["g","Grammar"],["q","Mock Test"],["e","Exam"],["l","All Words"]];
+let H=true;try{H=localStorage.getItem("njh")!=="0"}catch(e){}
+let lv="N5",tab="v",i=0,flip=false,qi=0,score=0,ans=false,known={};
+try{known=JSON.parse(localStorage.getItem("nj")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("nj",JSON.stringify(known))}catch(e){}};
+const $=id=>document.getElementById(id);
+function nav(){$("fg").textContent="ふりがな + Romaji: "+(H?"ON":"OFF");
+$("lv").innerHTML=L.map(l=>`<button class="${l==lv?"on":""}" onclick="lv='${l}';i=0;qi=0;score=0;ans=false;flip=false;draw()">${l}</button>`).join("");
+$("tabs").innerHTML=T.map(t=>`<button class="${t[0]==tab?"on":""}" onclick="tab='${t[0]}';i=0;qi=0;score=0;ans=false;flip=false;draw()">${t[1]}</button>`).join("")}
+function draw(){nav();const d=D[lv],m=$("main");
+if(tab=="v"||tab=="k"){const a=d[tab],c=a[i],key=lv+tab+i,n=a.filter((x,j)=>known[lv+tab+j]).length;
+m.innerHTML=`<small>${n} / ${a.length} learned</small><div class="bar"><i style="width:${n/a.length*100}%"></i></div>
+<div class="card flash" onclick="flip=!flip;draw()"><span class="tag">${lv} · ${tab=="v"?"Vocabulary":"Kanji"} ${i+1}/${a.length}</span>
+<div class="big">${H?ry(c[0],c[1]):c[0]}</div>${H?`<div class="rm">${rom(c[1])}</div>`:""}${flip?`<div class="jp">${c[1]}</div><div>${c[2]}</div>`:`<small>tap to reveal meaning</small>`}</div>
+<div class="row"><button class="btn" onclick="say('${c[1]}')">🔊</button><button class="btn" onclick="go(-1)">← Prev</button><button class="btn p" onclick="known['${key}']=1;save();go(1)">✓ I know this</button><button class="btn" onclick="go(1)">Next →</button></div>`}
+else if(tab=="w"){const a=d.k,c=a[i],n=a.filter((x,j)=>known[lv+"w"+j]).length;m.innerHTML=`<small>${n} / ${a.length} written</small><div class="bar"><i style="width:${n/a.length*100}%"></i></div><div class="card" style="text-align:center"><span class="tag">${lv} · Write ${i+1}/${a.length}</span><p class="jp" style="color:var(--ink);margin:6px 0">${c[1]} · ${c[2]}</p><div style="position:relative;width:300px;max-width:100%;aspect-ratio:1;margin:12px auto;border:1px dashed var(--line);border-radius:16px;overflow:hidden;background:var(--card)"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:230px;line-height:1;color:var(--line);font-family:'Hiragino Mincho ProN','Noto Serif JP','Yu Mincho',serif;user-select:none;pointer-events:none;opacity:${G?1:0}">${c[0]}</div><canvas id="cv" width="300" height="300" style="position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair"></canvas></div><div class="row"><button class="btn" onclick="G=!G;draw()">Guide ${G?"OFF":"ON"}</button><button class="btn" onclick="clr()">Clear</button></div><div class="row" style="margin-top:14px"><button class="btn" onclick="go(-1)">← Prev</button><button class="btn p" onclick="known['${lv}w${i}']=1;save();go(1)">✓ Done</button><button class="btn" onclick="go(1)">Next →</button></div></div>`;initCv()}
+else if(tab=="s"){const a=d.v,c=a[i];m.innerHTML=`<small>Say it out loud · ${i+1}/${a.length}</small><div class="bar"><i style="width:${(i+1)/a.length*100}%"></i></div><div class="card" style="text-align:center"><span class="tag">${lv} · Speaking</span><div class="big">${c[0]}</div><p class="jp" style="color:var(--ink);margin:6px 0">${c[1]}</p><p>${c[2]}</p><div class="row" style="margin:14px 0"><button class="btn" onclick="say('${c[1]}')">🔊 Listen</button><button class="btn p" onclick="sayIt()">🎤 Say it</button></div><div id="res" style="min-height:50px"></div><div class="row" style="margin-top:8px"><input id="typed" placeholder="Type here (hiragana / kanji)" style="padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px;flex:1;max-width:260px"><button class="btn" onclick="typed()">Check</button></div><div class="row"><button class="btn" onclick="go(-1)">← Prev</button><button class="btn" onclick="go(1)">Next →</button></div></div>`}
+else if(tab=="e"){exRender()}
+else if(tab=="l"){listDraw()}
+else if(tab=="g"){m.innerHTML=d.g.map(g=>`<div class="card"><div class="jp">${g[0]}</div><b>${g[1]}</b><p style="color:var(--mute);margin:8px 0 0">${g[2]}</p></div>`).join("")}
+else{const Q=d.q;if(qi>=Q.length){m.innerHTML=`<div class="card" style="text-align:center"><span class="tag">${lv} Mock Test</span><div class="sc">${score}/${Q.length}</div><p>${score==Q.length?"Perfect! 素晴らしい!":score>=Q.length/2?"Good job, keep going!":"Review the lessons and retry."}</p><button class="btn p" onclick="qi=0;score=0;ans=false;draw()">Retry</button></div>`;return}
+const q=Q[qi];m.innerHTML=`<small>Question ${qi+1} of ${Q.length}</small><div class="bar"><i style="width:${qi/Q.length*100}%"></i></div><div class="card"><div class="jp" style="color:var(--ink)">${q[0]}</div>${q[1].map((o,j)=>`<button class="opt" onclick="pick(${j})">${o}</button>`).join("")}</div>`}}
+let G=true;
+function initCv(){const c=$("cv");if(!c)return;const x=c.getContext("2d");x.lineCap="round";x.lineJoin="round";x.lineWidth=12;x.strokeStyle=getComputedStyle(document.documentElement).getPropertyValue("--gold").trim()||"#b8892b";let on=false,lx=0,ly=0;const p=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height]};c.onpointerdown=e=>{on=true;[lx,ly]=p(e);c.setPointerCapture(e.pointerId)};c.onpointermove=e=>{if(!on)return;const[a,b]=p(e);x.beginPath();x.moveTo(lx,ly);x.lineTo(a,b);x.stroke();lx=a;ly=b};c.onpointerup=c.onpointercancel=()=>{on=false}}
+let xp=0;try{xp=+localStorage.getItem("njxp")||0}catch(e){}
+function addXp(n){xp+=n;try{localStorage.setItem("njxp",xp)}catch(e){}const x=$("xp");if(x)x.textContent="XP "+xp}
+function bub(t){const b=$("bub");if(b)b.textContent=t}
+function say(t){if(!("speechSynthesis" in window))return bub("Speech not supported here.");speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="ja-JP";u.rate=.8;speechSynthesis.speak(u)}
+function listen(cb){const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R)return cb(null,"Voice input is not supported in this browser. Try Chrome, or type below.");const msgs={"not-allowed":"Microphone is blocked. Click the lock icon in the address bar, allow Microphone, then reload. Or open the link in a separate Chrome tab. Meanwhile, type below.","service-not-allowed":"Microphone service is blocked. Type below instead.","no-speech":"I didn't hear anything. Please try again.","audio-capture":"No microphone found.","network":"Network error."};let done=false;try{const r=new R();r.lang="ja-JP";r.interimResults=false;r.maxAlternatives=1;r.onresult=e=>{done=true;cb(e.results[0][0].transcript)};r.onerror=e=>{done=true;cb(null,msgs[e.error]||("Mic error: "+e.error))};r.onend=()=>{if(!done)cb(null,"I didn't hear anything. Please try again.")};r.start()}catch(e){cb(null,"Could not start the microphone: "+e.message)}}
+const nm=s=>String(s).replace(/[\s。、!?！？]/g,"").replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96)).toLowerCase();
+function judge(h){const c=D[lv].v[i],t=c[1].split("\u30fb")[0].replace(/[()]/g,""),r=$("res"),g=nm(h);const ok=[nm(t),nm(c[0])].some(x=>x&&(g==x||g.includes(x)));if(ok){addXp(10);r.innerHTML=`<b style="color:var(--ok)">\u2713 Sugoi! +10 XP</b><div>You said: ${h}</div>`}else{r.innerHTML=`<b style="color:var(--red)">\u2717 Try again</b><div>You said: ${h} \u00b7 Target: ${t} (${c[0]})</div>`}}
+function sayIt(){const r=$("res");r.innerHTML="<small>\ud83c\udfa7 Listening...</small>";listen((h,err)=>{if(err){r.innerHTML=`<small>${err}</small>`;return}judge(h)})}
+function typed(){const v=$("typed").value.trim();if(v)judge(v)}
+function handleCmd(h){bub("You said: "+h);const s=nm(h);if(/next|\u3064\u304e|agla/.test(s))go(1);else if(/back|prev|\u3082\u3069|peechhone/.test(s))go(-1);else if(/listen|\u304d\u304f|shono/.test(s))say(D[lv].v[i][1]);else if(/speak|\u8a71|bolo/.test(s)&&tab=="s")sayIt();else bub("Try: next, back, listen or speak")}
+function voiceCmd(){bub("Listening... say next, back, listen or speak");listen((h,err)=>{if(err)return bub(err+" Niche type kore command dite paren.");handleCmd(h)})}
+function cmdText(){const v=$("cmd").value.trim();if(v){handleCmd(v);$("cmd").value=""}}
+let EX={started:false,done:false,qs:[],i:0,sc:0,left:1200,t:null,wrong:[]};
+function exBuild(){const v=D.N5.v,pk=a=>a.slice().sort(()=>Math.random()-.5);const vq=pk(v).slice(0,12).map(x=>{const opts=pk([x[2],...pk(v.filter(y=>y!==x)).slice(0,3).map(y=>y[2])]);return{q:`「${x[0]}」 (${x[1]}) の意味は?`,o:opts,a:opts.indexOf(x[2])}});const mq=pk(D.N5.q).slice(0,12).map(([q,o,a])=>({q,o:[...o],a}));EX.qs=pk([...vq,...mq]).slice(0,20);EX.i=0;EX.sc=0;EX.wrong=[];EX.done=false;EX.left=1200;clearInterval(EX.t);EX.t=setInterval(()=>{EX.left--;if(EX.left<=0){EX.left=0;EX.done=true;clearInterval(EX.t)}exTick()},1000)}
+function exTick(){if(tab!="e")return;if(EX.done){draw();return}const el=$("ext");if(!el){draw();return}el.textContent="⏱ "+String(Math.floor(EX.left/60)).padStart(2,"0")+":"+String(EX.left%60).padStart(2,"0")}
+function exStart(){exBuild();EX.started=true;draw()}
+function exAns(j){const q=EX.qs[EX.i];if(j===q.a)EX.sc++;else EX.wrong.push({q:q.q,y:q.o[j],r:q.o[q.a]});EX.i++;if(EX.i>=EX.qs.length){EX.done=true;clearInterval(EX.t)}draw()}
+function exRender(){const m=$("main");
+if(!EX.started){m.innerHTML=`<div class="card" style="text-align:center"><span class="tag">N5 · Timed Exam</span><div class="big" style="font-size:44px">試験</div><p>20 ta question · 20 minute · pass = 60%</p><button class="btn p" onclick="exStart()">Start exam</button></div>`;return}
+if(EX.done){const pct=Math.round(EX.sc/EX.qs.length*100);m.innerHTML=`<div class="card" style="text-align:center"><span class="tag">Result</span><div class="sc">${EX.sc}/${EX.qs.length}</div><p>${pct}% · ${pct>=60?"<b style='color:var(--ok)'>PASS ✓</b>":"<b style='color:var(--red)'>Not yet, keep practicing</b>"}</p>${EX.wrong.map(w=>`<div style='text-align:left;margin:8px 0;padding:10px;border-radius:12px;border:1px solid var(--line)'><div>${w.q}</div><small style='color:var(--red)'>Your: ${w.y}</small> · <small style='color:var(--ok)'>Answer: ${w.r}</small></div>`).join("")}<button class="btn p" onclick="exStart()" style="margin-top:12px">Retry</button></div>`;return}
+const q=EX.qs[EX.i],mm=String(Math.floor(EX.left/60)).padStart(2,"0"),ss=String(EX.left%60).padStart(2,"0");
+m.innerHTML=`<div class="row" style="justify-content:space-between"><small>Question ${EX.i+1}/${EX.qs.length}</small><span class="tag" id="ext">⏱ ${mm}:${ss}</span></div><div class="bar"><i style="width:${EX.i/EX.qs.length*100}%"></i></div><div class="card"><div class="jp" style="color:var(--ink)">${q.q}</div>${q.o.map((o,j)=>`<button class="opt" onclick="exAns(${j})">${o}</button>`).join("")}</div>`}
+let LQ="";
+function listDraw(){const m=$("main");m.innerHTML=`<div class="card"><input id="lq" placeholder="Search word, reading or meaning" value="${LQ}" oninput="LQ=this.value;listFill()" style="width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:16px;margin-bottom:8px"><small id="lc"></small><div class="lhead"><span>#</span><span>Word</span><span>Reading</span><span>Meaning</span></div><div id="ll" style="max-height:60vh;overflow:auto"></div></div>`;listFill()}
+function listFill(){const q=LQ.trim().toLowerCase(),v=D.N5.v.filter(x=>!q||(x[0]+" "+x[1]+" "+x[2]).toLowerCase().includes(q));const c=$("lc"),l=$("ll");if(c)c.textContent=v.length+" / "+D.N5.v.length+" words";if(l)l.innerHTML=v.map((x,n)=>`<div class="lrow"><span class="ln">${n+1}</span><span class="jp" style="font-size:18px">${x[0]}</span><span>${x[1]}</span><span>${x[2]}</span></div>`).join("")}
+function clr(){const c=$("cv");if(c)c.getContext("2d").clearRect(0,0,c.width,c.height)}
+function go(s){const n=(tab=="w"?D[lv].k:tab=="s"?D[lv].v:D[lv][tab]).length;i=(i+s+n)%n;flip=false;draw()}
+function pick(j){if(ans)return;ans=true;const q=D[lv].q[qi];if(j==q[2])score++;
+document.querySelectorAll(".opt").forEach((b,k)=>{if(k==q[2])b.classList.add("ok");else if(k==j)b.classList.add("no")});
+const b=document.createElement("button");b.className="btn p";b.style.marginTop="10px";b.textContent="Next →";b.onclick=()=>{qi++;ans=false;draw()};$("main").querySelector(".card").appendChild(b)}
+$("fg").onclick=()=>{H=!H;try{localStorage.setItem("njh",H?"1":"0")}catch(e){}draw()};
+$("th").onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme=="dark"?"light":"dark"};
+if(navigator.permissions&&navigator.permissions.query){navigator.permissions.query({name:"microphone"}).then(r=>{if(r.state=="denied")bub("Mic block ache. Browser e lock icon > Microphone > Allow kore page reload korun. Ektu ota niche type kore command dite parben.")}).catch(()=>{})}
+draw();
+function introEnd(){const i=document.getElementById("intro");if(!i||i.classList.contains("out"))return;i.classList.add("out");setTimeout(()=>i.remove(),950)}
+setTimeout(introEnd,matchMedia("(prefers-reduced-motion: reduce)").matches?400:3800);
+</script></body></html>
